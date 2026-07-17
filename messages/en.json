@@ -1,0 +1,17 @@
+{
+  "Common": {
+    "title": "Video Management System",
+    "home": "Home",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  },
+  "Dashboard": {
+    "title": "CMS Dashboard",
+    "subtitle": "Manage website configurations from Strapi CMS (Server-Side Rendered)",
+    "siteInfo": "Website Information",
+    "socialMedia": "Social Media",
+    "menuStructure": "Menu Structure",
+    "cannotLoad": "Cannot load CMS data",
+    "cannotLoadDesc": "Global settings configuration not found or error connecting to Strapi CMS."
+  }
+}

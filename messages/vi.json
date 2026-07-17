@@ -1,0 +1,17 @@
+{
+  "Common": {
+    "title": "Hệ thống Quản lý Video",
+    "home": "Trang chủ",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi"
+  },
+  "Dashboard": {
+    "title": "Bảng điều khiển CMS",
+    "subtitle": "Quản lý cấu hình website từ Strapi CMS (Server-Side Rendered)",
+    "siteInfo": "Thông tin website",
+    "socialMedia": "Mạng xã hội",
+    "menuStructure": "Cấu trúc Menu",
+    "cannotLoad": "Không thể tải dữ liệu CMS",
+    "cannotLoadDesc": "Không tìm thấy cấu hình global-setting hoặc lỗi kết nối tới Strapi CMS."
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "name": "Spotless Cleaning - Professional Cleaning Services Sydney",
+  "short_name": "Spotless Cleaning",
+  "description": "Professional cleaning services in Sydney. Deep cleaning, regular maintenance, end of lease cleaning, restaurant and mould cleaning.",
+  "start_url": "https://spotless-cleaning-psi.vercel.app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "categories": ["business", "services"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Cleaning",
+      "short_name": "Booking",
+      "description": "Quick access to booking page",
+      "url": "https://spotless-cleaning-psi.vercel.app/booking",
+      "icons": [
+        {
+          "src": "/shortcut-booking.png",
+          "sizes": "192x207"
+        }
+      ]
+    },
+    {
+      "name": "Pricing",
+      "short_name": "Pricing",
+      "description": "Quick access to pricing page",
+      "url": "https://spotless-cleaning-psi.vercel.app/pricing",
+      "icons": [
+        {
+          "src": "/shortcut-pricing.png",
+          "sizes": "192x238"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

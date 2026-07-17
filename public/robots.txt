@@ -1,0 +1,40 @@
+# Spotless Cleaning - Robots.txt
+# Configuration for search engine crawlers
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow private/admin paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Crawl delay for polite crawling
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://spotless-cleaning-psi.vercel.app/sitemap.xml
+
+# Specific rules for different crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

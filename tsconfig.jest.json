@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx", // để Jest hiểu TSX
+    "module": "commonjs", // Jest cần CommonJS
+    "moduleResolution": "node",
+    "noEmit": false
+  },
+  "include": ["**/*.ts", "**/*.tsx", "src/test/**/*"]
+}
