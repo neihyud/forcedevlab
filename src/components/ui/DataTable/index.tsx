@@ -139,8 +139,7 @@ const DataTable = ({
               >
                 {headerGroup.headers.map((header) => {
                   const meta = header.column.columnDef.meta as
-                    | { className?: string }
-                    | undefined;
+                    { className?: string } | undefined;
                   return (
                     <TableHead
                       key={header.id}

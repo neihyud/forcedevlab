@@ -15,6 +15,11 @@
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
 
+  /* Custom Shadow tokens */
+  --shadow-300:
+    0px 4px 4px -1px rgba(12, 12, 13, 0.05),
+    0px 4px 4px -1px rgba(12, 12, 13, 0.1);
+
   /* Typography Scale */
   --text-display-2xl: 72px;
   --text-display-2xl--line-height: 90px;
@@ -157,7 +162,7 @@
   --accent: #f6f8fa;
   --accent-foreground: #0d0d12;
   --muted: #eceff3;
-  --muted-foreground: #666d80;
+  --muted-foreground: #98a2b3;
   --success: #30af32;
   --success-foreground: #ffffff;
   --warning: #ffbd00;
@@ -166,8 +171,8 @@
   --info-foreground: #ffffff;
   --destructive: #cc4f4f;
   --destructive-foreground: #ffffff;
-  --border: #dfe1e6;
-  --input: #dfe1e6;
+  --border: #d0d5dd;
+  --input: #d0d5dd;
   --ring: #032c57;
   --disabled: #eceff3;
   --disabled-foreground: #808897;
