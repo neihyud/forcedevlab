@@ -3,7 +3,9 @@
     "title": "Hệ thống Quản lý Video",
     "home": "Trang chủ",
     "loading": "Đang tải...",
-    "error": "Đã xảy ra lỗi"
+    "error": "Đã xảy ra lỗi",
+    "categoryTitle": "Danh mục",
+    "timeReading": "Phút đọc"
   },
   "Dashboard": {
     "title": "Bảng điều khiển CMS",
@@ -65,6 +67,10 @@
     "tabBusiness": "Phân tích doanh nghiệp",
     "tabCommodity": "Báo cáo thị trường hàng hóa",
     "tabMarket": "Nhận định thị trường",
-    "tabExpert": "Góc nhìn chuyên gia"
+    "tabExpert": "Góc nhìn chuyên gia",
+    "relatedTitle": "Bài viết liên quan",
+    "noRelated": "Không có báo cáo liên quan",
+    "noContent": "Nội dung báo cáo đang được cập nhật...",
+    "viewSource": "Xem tài liệu gốc"
   }
 }

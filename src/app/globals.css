@@ -149,10 +149,11 @@
 
   --color-orange-50: #ff9c00;
   --color-blue-13: #0b1237;
+  --color-blue-24: #0f2451;
 }
 :root {
   --radius: 0.625rem;
-  --background: #fffefa;
+  --background: #f5f8ff;
   --foreground: #0d0d12;
   --card: #ffffff;
   --card-foreground: #0d0d12;
