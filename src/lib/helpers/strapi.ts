@@ -86,13 +86,26 @@ export function getStrapiMediaUrl(url?: string | null): string {
  * @returns The resolved absolute image URL
  */
 export function getStrapiImageUrl(
-  media?: IStrapiMedia | null,
+  media?: any,
+  fallback: any = "",
   preferredFormat: "large" | "medium" | "small" | "thumbnail" = "medium",
-): string {
-  if (!media) return "";
+): any {
+  if (!media) return fallback;
 
-  const formatObj = media.formats?.[preferredFormat];
-  const relativeUrl = formatObj?.url || media.url;
+  // Extract actual media if an object with an image field is passed
+  let actualMedia;
+  if (typeof media === "object") {
+    if ("url" in media) {
+      actualMedia = media;
+    } else if ("image" in media && media.image) {
+      actualMedia = media.image;
+    }
+  }
 
-  return getStrapiMediaUrl(relativeUrl);
+  if (!actualMedia) return fallback;
+
+  const formatObj = actualMedia.formats?.[preferredFormat];
+  const relativeUrl = formatObj?.url || actualMedia.url;
+
+  return getStrapiMediaUrl(relativeUrl) || fallback;
 }

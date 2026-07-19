@@ -471,15 +471,15 @@ export const ArrowCircleRightIcon = (props: React.ComponentProps<"svg">) => {
 export const SearchIcon = (props: React.ComponentProps<"svg">) => {
   return (
     <svg
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
       {...props}
     >
       <path
-        d="M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+        d="M17.5001 17.5001L13.8835 13.8835M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
@@ -2081,20 +2081,61 @@ export const TickCircleAroundIcon = (props: React.ComponentProps<"svg">) => {
   );
 };
 
-export const ArrowRightIcon = (props: React.ComponentProps<"svg">) => {
+export const ClockIcon = (props: React.ComponentProps<"svg">) => {
   return (
     <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      width="19"
+      height="19"
+      viewBox="0 0 19 19"
+      fill="none"
       {...props}
     >
       <path
-        d="M7 12H17M17 12L13 8M17 12L13 16"
-        stroke="white"
+        d="M9.334 4.3336V9.334L12.6676 11.0008M17.668 9.334C17.668 13.9367 13.9367 17.668 9.334 17.668C4.73126 17.668 1 13.9367 1 9.334C1 4.73126 4.73126 1 9.334 1C13.9367 1 17.668 4.73126 17.668 9.334Z"
+        stroke="currentColor"
         strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const CalendarIcon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="19"
+      viewBox="0 0 17 19"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M5.16667 1V4.3336M11.8333 1V4.3336M1 7.6672H16M2.66667 2.6668H14.3333C15.2538 2.6668 16 3.41305 16 4.3336V16.0012C16 16.9217 15.2538 17.668 14.3333 17.668H2.66667C1.74619 17.668 1 16.9217 1 16.0012V4.3336C1 3.41305 1.74619 2.6668 2.66667 2.6668Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const ArrowRightIcon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M3.33301 8.00021H12.6674M8.00021 12.6674L12.6674 8.00021L8.00021 3.33301"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
