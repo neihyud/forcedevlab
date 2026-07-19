@@ -1,3 +1,8 @@
+export { PlayBtnHome } from "./PlayBtnHome";
+export { HelpDropDownIcon } from "./HelpDropdownIcon";
+export { ArrowDownLineIcon } from "./ArrowDownLineIcon";
+export { RemixSearchIcon } from "./RemixSearchIcon";
+
 export const EmptyIcon = (props: React.ComponentProps<"svg">) => {
   return (
     <svg

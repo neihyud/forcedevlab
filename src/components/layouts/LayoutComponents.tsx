@@ -1,6 +1,6 @@
 import Footer from "@/components/layouts/Footer";
 import { Header } from "@/components/layouts/Header";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import PageFlip from "@/components/common/PageFlip";
 import { IGlobalSetting, IMenuItem } from "@/types/cms";
 
@@ -15,12 +15,12 @@ const LayoutComponents = ({
   globalSetting,
 }: LayoutComponentsProps) => {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen relative bg-background text-foreground">
       <Header menus={menus} globalSetting={globalSetting} />
-      <div className="flex gap-10 px-40 mt-20 pt-5">
+      <main className="flex-1 flex flex-col">
         <PageFlip />
         {children}
-      </div>
+      </main>
       <Footer globalSetting={globalSetting} />
     </div>
   );

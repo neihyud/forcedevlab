@@ -87,7 +87,7 @@
   --color-primary-100: #98b9fd;
   --color-primary-200: #4493fc;
   --color-primary-300: #136ecb;
-  --color-primary-400: #0a4cbf;
+  --color-primary-400: #0a4c8f;
   --color-primary-500: #032c57;
   --color-primary-600: #011128;
 
@@ -141,6 +141,35 @@
   --color-warning-100: #f6d47d;
   --color-warning-200: #f3c551;
   --color-warning-300: #ffbd00;
+
+  --color-brand-gold: #f5a623;
+  --color-brand-orange: #ff9500;
+  --color-brand-navy: #0b1237;
+  --color-text-navy: #0f2451;
+  --color-navy-card: #002251;
+  --color-navy-dark: #001224;
+
+  --breakpoint-xl-footer: 1200px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 :root {
   --radius: 0.625rem;

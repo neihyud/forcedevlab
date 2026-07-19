@@ -16,6 +16,7 @@ const buttonVariants = cva(
         link: "bg-transparent hover:opacity-75 cursor-pointer",
         dashed: "border border-dashed bg-transparent",
         filled: "hover:brightness-90",
+        pure: "bg-transparent border-none p-0",
       },
       color: {
         default:
@@ -38,6 +39,7 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4  text-md",
         xLg: "h-14  px-8 has-[>svg]:px-6 text-lg",
         icon: "size-9",
+        pure: "h-auto w-auto p-0",
       },
       cursor: {
         default: "cursor-default",
@@ -233,7 +235,7 @@ const buttonVariants = cva(
   },
 );
 
-const loadingConainerVariants = cva("", {
+const loadingContainerVariants = cva("", {
   variants: {
     size: {
       default: "mr-2",
@@ -241,6 +243,7 @@ const loadingConainerVariants = cva("", {
       lg: "mr-2",
       xLg: "mr-4",
       icon: "mr-2",
+      pure: "",
     },
   },
   defaultVariants: {
@@ -258,6 +261,7 @@ const loadingVariants = cva("", {
       primary: "text-primary",
       outline: "text-primary",
       text: "text-primary",
+      pure: "text-primary",
     },
     size: {
       default: "size-5",
@@ -265,6 +269,7 @@ const loadingVariants = cva("", {
       lg: "size-6",
       xLg: "size-8",
       icon: "size-5",
+      pure: "size-4",
     },
   },
   defaultVariants: {
@@ -327,7 +332,7 @@ function Button({
     >
       {loading && (
         <Spin
-          containerClassName={loadingConainerVariants({ size })}
+          containerClassName={loadingContainerVariants({ size })}
           className={loadingVariants({ variant, size })}
         />
       )}

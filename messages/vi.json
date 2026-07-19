@@ -13,5 +13,161 @@
     "menuStructure": "Cấu trúc Menu",
     "cannotLoad": "Không thể tải dữ liệu CMS",
     "cannotLoadDesc": "Không tìm thấy cấu hình global-setting hoặc lỗi kết nối tới Strapi CMS."
+  },
+  "MegaMenu": {
+    "Dịch vụ": "Dịch vụ",
+    "Hướng dẫn": "Hướng dẫn",
+    "Báo cáo phân tích": "Báo cáo phân tích",
+    "Kiến thức": "Kiến thức",
+    "Hệ sinh thái": "Hệ sinh thái",
+
+    "dich_vu_1": {
+      "label": "Dịch vụ 1",
+      "desc": "Mô tả ngắn về dịch vụ 1"
+    },
+    "sub_service_1": {
+      "label": "Dịch vụ con 1",
+      "desc": "Mô tả ngắn về dịch vụ 1"
+    },
+    "sub_service_2": {
+      "label": "Dịch vụ con 2",
+      "desc": "Mô tả ngắn về dịch vụ 4"
+    },
+    "dich_vu_2": {
+      "label": "Dịch vụ 2",
+      "desc": "Mô tả ngắn về dịch vụ 2"
+    },
+    "sub_service_3": {
+      "label": "Dịch vụ con 3",
+      "desc": "Mô tả ngắn về dịch vụ 2"
+    },
+    "sub_service_4": {
+      "label": "Dịch vụ con 4",
+      "desc": "Mô tả ngắn về dịch vụ 3"
+    },
+    "dich_vu_3": {
+      "label": "Dịch vụ 3",
+      "desc": "Mô tả ngắn về dịch vụ 3"
+    },
+    "sub_service_5": {
+      "label": "Dịch vụ con 5",
+      "desc": "Mô tả ngắn về dịch vụ 1"
+    },
+    "sub_service_6": {
+      "label": "Dịch vụ con 6",
+      "desc": "Mô tả ngắn về dịch vụ 2"
+    },
+    "dich_vu_4": {
+      "label": "Dịch vụ 4",
+      "desc": "Mô tả ngắn về dịch vụ 4"
+    },
+    "sub_service_7": {
+      "label": "Dịch vụ con 7",
+      "desc": "Mô tả ngắn về dịch vụ 3"
+    },
+    "sub_service_8": {
+      "label": "Dịch vụ con 8",
+      "desc": "Mô tả ngắn về dịch vụ 4"
+    },
+
+    "huong_dan_co_ban": {
+      "label": "Hướng dẫn cơ bản",
+      "desc": "Các bước đầu tiên để tham gia thị trường"
+    },
+    "mo_tai_khoan": {
+      "label": "Mở tài khoản trực tuyến",
+      "desc": "Đăng ký tài khoản nhanh chóng trong 5 phút"
+    },
+    "nap_rut": {
+      "label": "Nạp và rút tiền",
+      "desc": "Hướng dẫn thực hiện giao dịch nạp rút"
+    },
+    "giao_dich_hvs": {
+      "label": "Giao dịch HVS",
+      "desc": "Hướng dẫn sử dụng nền tảng giao dịch HVS"
+    },
+    "dat_lenh": {
+      "label": "Đặt lệnh giao dịch",
+      "desc": "Các loại lệnh và cách đặt lệnh"
+    },
+    "bang_gia": {
+      "label": "Xem bảng giá",
+      "desc": "Đọc và phân tích bảng giá trực tuyến"
+    },
+
+    "bao_cao_vi_mo": {
+      "label": "Báo cáo vĩ mô",
+      "desc": "Phân tích diễn biến kinh tế và chính sách"
+    },
+    "nhan_dinh_thi_truong": {
+      "label": "Nhận định thị trường",
+      "desc": "Cập nhật xu hướng giao dịch hàng ngày"
+    },
+    "bao_cao_chien_luoc": {
+      "label": "Báo cáo chiến lược",
+      "desc": "Phân tích chiến lược đầu tư định kỳ"
+    },
+    "bao_cao_doanh_nghiep": {
+      "label": "Báo cáo doanh nghiệp",
+      "desc": "Phân tích chi tiết tiềm năng cổ phiếu"
+    },
+    "cap_nhat_doanh_nghiep": {
+      "label": "Cập nhật doanh nghiệp",
+      "desc": "Đánh giá kết quả kinh doanh quý mới nhất"
+    },
+    "khuyen_nghi_dau_tu": {
+      "label": "Khuyến nghị đầu tư",
+      "desc": "Danh mục cổ phiếu tiềm năng"
+    },
+
+    "chung_khoan_co_ban": {
+      "label": "Chứng khoán cơ bản",
+      "desc": "Kiến thức nền tảng cho người mới bắt đầu"
+    },
+    "chung_khoan_la_gi": {
+      "label": "Chứng khoán là gì?",
+      "desc": "Khái niệm và nguyên lý hoạt động"
+    },
+    "phan_tich_co_ban": {
+      "label": "Phân tích cơ bản",
+      "desc": "Cách đọc báo cáo tài chính doanh nghiệp"
+    },
+    "phan_tich_ky_thuat": {
+      "label": "Phân tích kỹ thuật",
+      "desc": "Sử dụng đồ thị để dự báo xu hướng giá"
+    },
+    "cac_mo_hinh_nen": {
+      "label": "Các mô hình nến",
+      "desc": "Đọc hiểu đồ thị hình nến cơ bản"
+    },
+    "chi_bao_ky_thuat": {
+      "label": "Chỉ báo kỹ thuật",
+      "desc": "Sử dụng các chỉ báo MA, RSI, MACD"
+    },
+
+    "nen_tang_giao_dich": {
+      "label": "Nền tảng giao dịch",
+      "desc": "Các công cụ giao dịch đa nền tảng"
+    },
+    "hvs_trading_web": {
+      "label": "HVS Trading Web",
+      "desc": "Giao dịch trực tuyến trên trình duyệt"
+    },
+    "hvs_trading_app": {
+      "label": "HVS Trading App",
+      "desc": "Ứng dụng giao dịch trên iOS & Android"
+    },
+    "tien_ich_dau_tu": {
+      "label": "Tiện ích đầu tư",
+      "desc": "Các công cụ hỗ trợ phân tích đầu tư số"
+    },
+    "hvs_robo_advisor": {
+      "label": "HVS Robo Advisor",
+      "desc": "Hệ thống tư vấn khuyến nghị tự động"
+    },
+    "cong_cu_tinh_toan": {
+      "label": "Công cụ tính toán",
+      "desc": "Tính lãi suất, thuế và phí giao dịch"
+    }
   }
 }
