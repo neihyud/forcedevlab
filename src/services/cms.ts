@@ -1,5 +1,5 @@
 import { buildStrapiQuery } from "@/lib/helpers/strapi";
-import { IGlobalSetting, IMenuItem } from "@/types/cms";
+import { IGlobalSetting, IMenuItem, IPageSeo } from "@/types/cms";
 import {
   IStrapiSingleResponse,
   IStrapiCollectionResponse,
@@ -28,6 +28,8 @@ const mockGlobalSetting: IStrapiSingleResponse<IGlobalSetting> = {
     hotline: "0123456789",
     address: "Hà Nội, Việt Nam",
     googleAnalyticsId: "UA-123456-1",
+    workingHours: "08:00 – 17:00 (Thứ 2 – Thứ 6)",
+    fax: "Fax: (+84-24) 36888886",
     logo: null,
     favicon: null,
     socialMedia: [
@@ -163,5 +165,45 @@ export async function fetchMenus(): Promise<
   } catch (error) {
     console.error("Failed to fetch menus, falling back to mock data:", error);
     return mockMenus;
+  }
+}
+
+/**
+ * Fetch specific Page SEO by path and locale.
+ */
+export async function fetchPageSeo(
+  path: string,
+  locale: string,
+): Promise<IStrapiCollectionResponse<IPageSeo>> {
+  try {
+    const query = buildStrapiQuery({
+      filters: {
+        path: {
+          $eq: path,
+        },
+      },
+      locale: locale,
+      populate: "image",
+    });
+    const url = `${cleanBaseUrl}/api/page-seos?${query}`;
+
+    const res = await fetch(url, {
+      next: {
+        revalidate: 86400,
+        tags: [`cms-page-seo-${path}-${locale}`],
+      },
+    });
+
+    if (!res.ok) {
+      console.warn(
+        `CMS Fetch page SEO returned status: ${res.status}. Returning empty results.`,
+      );
+      return { data: [], meta: {} };
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error(`Failed to fetch page SEO for path ${path}:`, error);
+    return { data: [], meta: {} };
   }
 }

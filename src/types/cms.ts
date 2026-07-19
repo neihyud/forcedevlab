@@ -18,9 +18,21 @@ export interface IGlobalSetting {
   hotline: string;
   address: string;
   googleAnalyticsId: string;
+  workingHours: string;
+  fax: string;
   logo: IStrapiMedia | null;
   favicon: IStrapiMedia | null;
   socialMedia: ISocialMedia[];
+}
+
+// ─── Page SEO (Collection Type) ────────────────────────────────────────────────
+export interface IPageSeo {
+  path: string;
+  title: string;
+  description: string;
+  keywords?: string | null;
+  image?: IStrapiMedia | null;
+  active: "ACTIVE" | "INACTIVE";
 }
 
 // ─── Menu (Collection Type) ────────────────────────────────────────────────────
