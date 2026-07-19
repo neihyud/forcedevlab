@@ -17,6 +17,7 @@ import { getStrapiImageUrl } from "@/lib/helpers/strapi";
 import { ICategory, IGlobalSetting, IReportAnalyst } from "@/types/cms";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link, useRouter } from "@/i18n/routing";
 import { useState } from "react";
 import ReportRegisterForm from "./ReportRegisterForm";
 
@@ -31,6 +32,7 @@ export default function AnalysisReportModule({
   categories = [],
 }: AnalysisReportModuleProps) {
   const t = useTranslations("ReportAnalytic");
+  const router = useRouter();
 
   const [activeTab, setActiveTab] = useState(
     categories && categories.length > 0 && categories[0].slug
@@ -163,30 +165,45 @@ export default function AnalysisReportModule({
                     <span className="inline-flex items-center bg-orange-50 rounded-sm py-1 px-3 font-poppins text-sm text-white tracking-wider">
                       {t("badgeFeatured")}
                     </span>
-                    <h3 className="text-lg font-bold text-blue-13 dark:text-white leading-tight uppercase">
-                      {featured.title}
-                    </h3>
+                    <Link
+                      href={`/bao-cao-phan-tich/${featured.slug || featured.id}`}
+                    >
+                      <h3 className="text-lg font-bold text-blue-13 dark:text-white leading-tight uppercase hover:text-secondary transition-colors cursor-pointer">
+                        {featured.title}
+                      </h3>
+                    </Link>
                     <p className="text-sm text-[#475467] dark:text-gray-300 leading-relaxed font-medium line-clamp-4">
                       {featured.description}
                     </p>
                   </div>
 
-                  <Button variant="container" color="secondary" className="p-6">
-                    {t("readMore")}
-                  </Button>
+                  <Link
+                    href={`/bao-cao-phan-tich/${featured.slug || featured.id}`}
+                  >
+                    <Button
+                      variant="container"
+                      color="secondary"
+                      className="p-6"
+                    >
+                      {t("readMore")}
+                    </Button>
+                  </Link>
                 </div>
 
                 {/* Graphic/Image side with premium fallback visual background */}
-                <div className="lg:col-span-6 relative min-h-[260px] lg:min-h-0 overflow-hidden">
+                <Link
+                  href={`/bao-cao-phan-tich/${featured.slug || featured.id}`}
+                  className="lg:col-span-6 relative min-h-[260px] lg:min-h-0 overflow-hidden group/img cursor-pointer"
+                >
                   <Image
                     src={getStrapiImageUrl(featured, fallbackReportFuture)}
                     alt="Featured Report Graphic"
                     fill
                     priority
-                    className="object-cover object-center brightness-[0.95]"
+                    className="object-cover object-center brightness-[0.95] group-hover/img:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
-                </div>
+                </Link>
               </div>
             </div>
           )}
@@ -215,8 +232,12 @@ export default function AnalysisReportModule({
                     badge={report.category?.title}
                     date={report.public_at}
                     title={report.title}
-                    description={report.description_mini}
-                    onClick={() => console.log(`Clicked report ${report.id}`)}
+                    description={report.description_mini || undefined}
+                    onClick={() =>
+                      router.push(
+                        `/bao-cao-phan-tich/${report.slug || report.id}`,
+                      )
+                    }
                     className="border-none rounded-2xl shadow-300"
                     textButton={t("readMore")}
                     tags={

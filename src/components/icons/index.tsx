@@ -675,6 +675,38 @@ export const FacebookIcon = (props: React.ComponentProps<"svg">) => {
   );
 };
 
+export const LinkedinIcon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M16.8694 8.13075C15.9317 7.19303 14.6598 6.66623 13.3336 6.66623C12.0074 6.66623 10.7356 7.19303 9.7978 8.13075C8.86004 9.06848 8.33322 10.3403 8.33322 11.6664V17.5H11.6668V11.6664C11.6668 11.2244 11.8424 10.8005 12.155 10.4879C12.4676 10.1753 12.8916 9.9997 13.3336 9.9997C13.7757 9.9997 14.1996 10.1753 14.5122 10.4879C14.8248 10.8005 15.0004 11.2244 15.0004 11.6664V17.5H18.334V11.6664C18.334 10.3403 17.8072 9.06848 16.8694 8.13075Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M4.99962 7.49959H1.66602V17.5H4.99962V7.49959Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M3.33282 4.99949C4.25336 4.99949 4.99962 4.25327 4.99962 3.33275C4.99962 2.41224 4.25336 1.66602 3.33282 1.66602C2.41227 1.66602 1.66602 2.41224 1.66602 3.33275C1.66602 4.25327 2.41227 4.99949 3.33282 4.99949Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
 export const YoutubeIcon = (props: React.ComponentProps<"svg">) => {
   return (
     <svg
@@ -2119,6 +2151,33 @@ export const CalendarIcon = (props: React.ComponentProps<"svg">) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+};
+
+export const UploadIcon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g clipPath="url(#clip0_272_11909)">
+        <path
+          d="M9.99998 1.66602V12.5002M6.66698 4.99962L9.99998 1.66602L13.333 4.99962M3.33398 10V16.6672C3.33398 17.1093 3.50956 17.5332 3.82209 17.8458C4.13462 18.1584 4.5585 18.334 5.00048 18.334H14.9995C15.4415 18.334 15.8653 18.1584 16.1779 17.8458C16.4904 17.5332 16.666 17.1093 16.666 16.6672V10"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_272_11909">
+          <rect width="20" height="20" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };

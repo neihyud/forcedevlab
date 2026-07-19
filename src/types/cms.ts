@@ -38,15 +38,28 @@ export interface IPageSeo {
 // ─── Report Analyst (Collection Type) ──────────────────────────────────────────
 export interface IReportAnalyst {
   id: number;
+  documentId: string;
   title: string;
-  description: string;
-  badge: string;
+  slug?: string | null;
+  description?: string | null;
+  description_mini?: string | null;
+  badge?: string | null;
   public_at: string;
-  Keyword: string;
+  Keyword?: string | null;
   category: ICategory;
-  description_mini: string;
-  isFeatured: boolean;
-  tags?: string | null;
+  isFeatured?: boolean;
+  view?: number | null;
+  pin?: boolean | null;
+  ticker?: string | null;
+  reading_time?: string | null;
+  source_link?: string | null;
+  title_seo?: string | null;
+  description_seo?: string | null;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  active: "ACTIVE" | "INACTIVE";
   image?: IStrapiMedia | null;
 }
 
