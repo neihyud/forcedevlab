@@ -16,11 +16,8 @@ const LayoutComponents = ({
 }: LayoutComponentsProps) => {
   return (
     <div className="flex flex-col min-h-screen relative">
-      <Header menus={menus} globalSetting={globalSetting} />
-      <div className="flex gap-10 px-40 mt-20 pt-5">
-        <PageFlip />
-        {children}
-      </div>
+      {/* <Header menus={menus} globalSetting={globalSetting} /> */}
+      <div className="flex gap-10">{children}</div>
       <Footer globalSetting={globalSetting} />
     </div>
   );

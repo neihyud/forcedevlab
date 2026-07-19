@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { fetchGlobalSetting, fetchPageSeo } from "@/services/cms";
+import { fetchGlobalSetting, fetchPageSeo } from "@/services/cms/global";
 import { getStrapiMediaUrl } from "@/lib/helpers/strapi";
 
 interface SeoHelperOptions {

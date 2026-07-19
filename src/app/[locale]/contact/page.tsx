@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Contact from "@/modules/contact";
 import { getSeoMetadata } from "@/lib/utils/seo";
-import { fetchGlobalSetting } from "@/services/cms";
+import { fetchGlobalSetting } from "@/services/cms/global";
 
 interface PageProps {
   params: Promise<{ locale: string }>;

@@ -35,6 +35,21 @@ export interface IPageSeo {
   active: "ACTIVE" | "INACTIVE";
 }
 
+// ─── Report Analyst (Collection Type) ──────────────────────────────────────────
+export interface IReportAnalyst {
+  id: number;
+  title: string;
+  description: string;
+  badge: string;
+  public_at: string;
+  Keyword: string;
+  category: ICategory;
+  description_mini: string;
+  isFeatured: boolean;
+  tags?: string | null;
+  image?: IStrapiMedia | null;
+}
+
 // ─── Menu (Collection Type) ────────────────────────────────────────────────────
 export type TMenuActive = "ACTIVE" | "DEACTIVE";
 
@@ -56,4 +71,15 @@ export interface ICmsData {
   globalSetting: (IGlobalSetting & IStrapiBase) | null;
   menus: (IMenuItem & IStrapiBase)[];
   lastFetched: string | null;
+}
+
+// ─── Category (Collection Type) ────────────────────────────────────────────────
+export interface ICategory {
+  id: number;
+  title: string;
+  type?: string | null;
+  slug?: string | null;
+  description?: string | null;
+  active?: "ACTIVE" | "INACTIVE";
+  order?: number | null;
 }

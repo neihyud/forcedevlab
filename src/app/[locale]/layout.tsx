@@ -4,7 +4,7 @@ import "../globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import NextTopLoader from "nextjs-toploader";
 import LayoutComponents from "@/components/layouts/LayoutComponents";
-import { fetchGlobalSetting, fetchMenus } from "@/services/cms";
+import { fetchGlobalSetting, fetchMenus } from "@/services/cms/global";
 import { getStrapiMediaUrl } from "@/lib/helpers/strapi";
 import { IGlobalSetting, IMenuItem } from "@/types/cms";
 import { IStrapiBase } from "@/types/strapi";
