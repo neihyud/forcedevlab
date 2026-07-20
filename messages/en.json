@@ -228,5 +228,20 @@
     "noRelated": "No related reports",
     "noContent": "Report content is being updated...",
     "viewSource": "View original document"
+  },
+  "Footer": {
+    "followUs": "Follow us on",
+    "aboutUs": "ABOUT US",
+    "introduce": "Introduction",
+    "newsHvs": "HVS News",
+    "shareholder": "Shareholder Relations",
+    "career": "Career Opportunities",
+    "contact": "Contact",
+    "terms": "Terms & Conditions",
+    "headquarters": "Headquarters",
+    "phone": "Phone",
+    "fax": "Fax",
+    "email": "Email",
+    "workingTime": "Working hours"
   }
 }

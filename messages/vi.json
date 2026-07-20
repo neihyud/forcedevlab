@@ -228,5 +228,20 @@
     "noRelated": "Không có báo cáo liên quan",
     "noContent": "Nội dung báo cáo đang được cập nhật...",
     "viewSource": "Xem tài liệu gốc"
+  },
+  "Footer": {
+    "followUs": "Theo dõi trên",
+    "aboutUs": "VỀ CHÚNG TÔI",
+    "introduce": "Giới thiệu",
+    "newsHvs": "Tin tức HVS",
+    "shareholder": "Quan hệ cổ đông",
+    "career": "Cơ hội nghề nghiệp",
+    "contact": "Liên hệ",
+    "terms": "Điều khoản chung",
+    "headquarters": "Hội sở",
+    "phone": "Điện thoại",
+    "fax": "Fax",
+    "email": "Email",
+    "workingTime": "Thời gian làm việc"
   }
 }

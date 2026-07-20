@@ -33,12 +33,24 @@ def convert_to_webp(source_path, quality=90):
         else:
             print("Error: Target file must be a PNG, JPG, or JPEG image.")
 
+def format_size(bytes):
+    if bytes < 1024:
+        return f"{bytes} B"
+    elif bytes < 1024 * 1024:
+        return f"{bytes / 1024:.1f} KB"
+    else:
+        return f"{bytes / (1024 * 1024):.2f} MB"
+
 def do_conversion(image_path, quality):
     try:
+        original_size = os.path.getsize(image_path)
         img = Image.open(image_path)
         dest_path = os.path.splitext(image_path)[0] + ".webp"
         img.save(dest_path, "WEBP", quality=quality)
+        webp_size = os.path.getsize(dest_path)
+        reduction = (1 - webp_size / original_size) * 100
         print(f"Converted: {image_path} -> {dest_path}")
+        print(f"  Size: {format_size(original_size)} -> {format_size(webp_size)} ({reduction:+.1f}%)")
     except Exception as e:
         print(f"Failed to convert {image_path}: {e}")
 

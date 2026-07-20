@@ -1,11 +1,10 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import { IGlobalSetting } from "@/types/cms";
 import { TikTokIcon } from "@/components/icons";
+import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 import logoImg from "@/lib/assets/images/logo.webp";
 import footerMap from "@/lib/assets/mock-images/footer/footer_map.webp";
 import footerCert1 from "@/lib/assets/mock-images/footer/footer_cert1.webp";
@@ -16,7 +15,9 @@ interface FooterProps {
   globalSetting?: IGlobalSetting | null;
 }
 
-export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
+export const Footer: React.FC<FooterProps> = async ({ globalSetting }) => {
+  const t = await getTranslations("Footer");
+
   const slogan =
     globalSetting?.slogan || "LÀM ÍT HƠN AN TOÀN HƠN LỢI NHUẬN NHIỀU HƠN";
   const address =
@@ -72,7 +73,7 @@ export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
 
           <div className="flex items-center gap-[12px]">
             <span className="text-white font-medium text-sm md:text-base font-poppins">
-              Theo dõi trên
+              {t("followUs")}
             </span>
             <div className="flex items-center gap-[16px]">
               <a
@@ -121,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
           <div className="xl-footer:col-span-4 flex flex-col items-center xl-footer:items-start text-center xl-footer:text-left space-y-4">
             <div className="relative pb-2 inline-block">
               <h3 className="text-base xl-footer:text-[17px] font-semibold font-poppins text-white uppercase leading-[25px]">
-                VỀ CHÚNG TÔI
+                {t("aboutUs")}
               </h3>
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 xl-footer:left-0 xl-footer:translate-x-0 w-[68px] h-[4px] bg-brand-orange rounded-sm" />
             </div>
@@ -129,10 +130,10 @@ export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
             <ul className="space-y-3 font-poppins text-sm md:text-base text-white">
               <li>
                 <Link
-                  href="#"
+                  href="/about-us"
                   className="hover:text-brand-gold transition-colors"
                 >
-                  Giới thiệu
+                  {t("introduce")}
                 </Link>
               </li>
               <li>
@@ -140,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
                   href="#"
                   className="hover:text-brand-gold transition-colors"
                 >
-                  Tin tức HVS
+                  {t("newsHvs")}
                 </Link>
               </li>
               <li>
@@ -148,7 +149,7 @@ export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
                   href="#"
                   className="hover:text-brand-gold transition-colors"
                 >
-                  Quan hệ cổ đông
+                  {t("shareholder")}
                 </Link>
               </li>
             </ul>
@@ -162,7 +163,15 @@ export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
                   href="#"
                   className="hover:text-brand-gold transition-colors"
                 >
-                  Cơ hội nghề nghiệp
+                  {t("career")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-brand-gold transition-colors"
+                >
+                  {t("contact")}
                 </Link>
               </li>
               <li>
@@ -170,15 +179,7 @@ export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
                   href="#"
                   className="hover:text-brand-gold transition-colors"
                 >
-                  Liên hệ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-brand-gold transition-colors"
-                >
-                  Điều khoản chung
+                  {t("terms")}
                 </Link>
               </li>
             </ul>
@@ -202,11 +203,21 @@ export const Footer: React.FC<FooterProps> = ({ globalSetting }) => {
         <div className="flex flex-col xl-footer:flex-row justify-between items-center gap-6 py-6 text-center xl-footer:text-left">
           {/* Address Details */}
           <div className="space-y-1.5 font-poppins text-xs sm:text-sm text-white max-w-none xl-footer:max-w-[850px] leading-relaxed">
-            <p>Hội sở: {address}</p>
-            <p>Điện thoại: {phone}</p>
-            <p>Fax: {fax}</p>
-            <p>Email: {email}</p>
-            <p>Thời gian làm việc: {workingTime}</p>
+            <p>
+              {t("headquarters")}: {address}
+            </p>
+            <p>
+              {t("phone")}: {phone}
+            </p>
+            <p>
+              {t("fax")}: {fax}
+            </p>
+            <p>
+              {t("email")}: {email}
+            </p>
+            <p>
+              {t("workingTime")}: {workingTime}
+            </p>
           </div>
 
           {/* Certifications Badges */}
