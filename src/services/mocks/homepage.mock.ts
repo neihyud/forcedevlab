@@ -1,0 +1,302 @@
+import { IHomepage } from "@/types/cms";
+import { IStrapiSingleResponse } from "@/types/strapi";
+import { mockPartners } from "./partners.mock";
+import { mockNews } from "./news.mock";
+import mockHeroBg from "@/lib/assets/mock-images/home/bg-hero.webp";
+import mockTuVanSo from "@/lib/assets/mock-images/home/producs/tu_van_so.webp";
+import mockDaoTao from "@/lib/assets/mock-images/home/producs/dao_tao.webp";
+import mockNews1 from "@/lib/assets/mock-images/home/news/news-1.webp";
+import mockAppMockup from "@/lib/assets/mock-images/home/app-download/app_mockup.webp";
+import mockAppQr from "@/lib/assets/mock-images/home/app-download/app_qr.webp";
+import mockAppLogo from "@/lib/assets/images/logo.webp";
+
+export const mockHeroSection = {
+  id: 1,
+  __component: "sections.hero-section" as const,
+  title: "Đầu Tư Tinh Gọn",
+  subtitle: "Thịnh Vượng Vững Chắc",
+  description:
+    "Hiện thực hóa mục tiêu tài chính của bạn một cách an toàn và hiệu quả hơn. Hệ thống tư vấn số trực tuyến của chúng tôi tự động hóa các bước phân tích phức tạp, giúp bạn đưa ra quyết định chính xác mà không tốn nhiều thời gian.",
+  heroBackground: {
+    id: 201,
+    documentId: "media-hero-bg",
+    name: "fallback.webp",
+    alternativeText: "Hero Background",
+    caption: null,
+    width: 1920,
+    height: 1080,
+    formats: null,
+    hash: "herobg",
+    ext: ".webp",
+    mime: "image/webp",
+    size: 1,
+    url: typeof mockHeroBg === "string" ? mockHeroBg : mockHeroBg.src,
+    previewUrl: null,
+    provider: "local",
+    provider_metadata: null,
+    createdAt: "2026-07-14T00:00:00.000Z",
+    updatedAt: "2026-07-14T00:00:00.000Z",
+    publishedAt: "2026-07-14T00:00:00.000Z",
+  },
+  badgeText: "LÀM ÍT HƠN {AN TOÀN HƠN} [LỢI NHUẬN NHIỀU HƠN]",
+  ctaText: "Mở tài khoản",
+  ctaLink: "#",
+  videoUrl:
+    "https://assets.mixkit.co/videos/preview/mixkit-investment-dashboard-on-a-tablet-screen-40149-large.mp4",
+};
+
+export const mockPartnersSection = {
+  id: 2,
+  __component: "sections.partners-section" as const,
+  title: "Đối Tác Tin Cậy Bởi",
+  partners: mockPartners.data,
+};
+
+export const mockProductServiceSection = {
+  id: 3,
+  __component: "sections.product-service-section" as const,
+  title: "SẢN PHẨM & DỊCH VỤ",
+  cards: [
+    {
+      id: 1,
+      title: "Tư vấn số",
+      badge: "HỆ SINH THÁI TƯ VẤN SỐ",
+      subtitle: "Cung cấp dịch vụ Tư vấn đầu tư chứng khoán",
+      description:
+        "Hệ sinh thái Tư vấn số được phát triển bởi Công ty cổ phần Chứng khoán HVS Việt Nam với mục đích cung cấp đầy đủ tiện ích cho Khách hàng.",
+      image: {
+        id: 301,
+        documentId: "media-product-1",
+        name: "tu_van_so.webp",
+        alternativeText: "Tư vấn số",
+        caption: null,
+        width: 536,
+        height: 314,
+        formats: null,
+        hash: "product1",
+        ext: ".webp",
+        mime: "image/webp",
+        size: 100,
+        url: typeof mockTuVanSo === "string" ? mockTuVanSo : mockTuVanSo.src,
+        previewUrl: null,
+        provider: "local",
+        provider_metadata: null,
+        createdAt: "2026-07-14T00:00:00.000Z",
+        updatedAt: "2026-07-14T00:00:00.000Z",
+        publishedAt: "2026-07-14T00:00:00.000Z",
+      },
+    },
+    {
+      id: 2,
+      title: "Đào tạo",
+      badge: "TÀI CHÍNH SỐ",
+      subtitle: "Nền tảng hỗ trợ người dùng trong hành trình đầu tư",
+      description:
+        "Được phát triển bởi Công ty cổ phần Chứng khoán HVS Việt Nam nhằm hỗ trợ nhà đầu tư trong suốt quá trình tham gia thị trường chứng khoán, từ học kiến thức, theo dõi thông tin đến quản lý và ra quyết định đầu tư.",
+      image: {
+        id: 302,
+        documentId: "media-product-2",
+        name: "dao_tao.webp",
+        alternativeText: "Đào tạo tài chính số",
+        caption: null,
+        width: 536,
+        height: 314,
+        formats: null,
+        hash: "product2",
+        ext: ".webp",
+        mime: "image/webp",
+        size: 100,
+        url: typeof mockDaoTao === "string" ? mockDaoTao : mockDaoTao.src,
+        previewUrl: null,
+        provider: "local",
+        provider_metadata: null,
+        createdAt: "2026-07-14T00:00:00.000Z",
+        updatedAt: "2026-07-14T00:00:00.000Z",
+        publishedAt: "2026-07-14T00:00:00.000Z",
+      },
+    },
+  ],
+  entrustTitle: "ỦY THÁC TRỌN NIỀM TIN CÙNG HVS - ỦY THÁC QUẢN LÝ TÀI SẢN",
+  entrustSubtitle: "Dịch vụ đa dạng để tối ưu hóa danh mục đầu tư của bạn",
+  entrustDescription:
+    "HVS – ỦY THÁC QUẢN LÝ TÀI SẢN là nền tảng phục vụ nhu cầu giao dịch cổ phiếu với các thao tác đơn giản",
+  entrustImage: {
+    id: 303,
+    documentId: "media-product-3",
+    name: "news-1.webp",
+    alternativeText: "Ủy thác quản lý tài sản",
+    caption: null,
+    width: 538,
+    height: 339,
+    formats: null,
+    hash: "product3",
+    ext: ".webp",
+    mime: "image/webp",
+    size: 100,
+    url: typeof mockNews1 === "string" ? mockNews1 : mockNews1.src,
+    previewUrl: null,
+    provider: "local",
+    provider_metadata: null,
+    createdAt: "2026-07-14T00:00:00.000Z",
+    updatedAt: "2026-07-14T00:00:00.000Z",
+    publishedAt: "2026-07-14T00:00:00.000Z",
+  },
+};
+
+export const mockNewsSection = {
+  id: 4,
+  __component: "sections.news-section" as const,
+  title: "bảng tin cập nhật",
+  articles: mockNews.data,
+};
+
+export const mockReviewsSection = {
+  id: 5,
+  __component: "sections.reviews-section" as const,
+  title: "Đánh giá dịch vụ",
+  reviews: [
+    {
+      id: 1,
+      documentId: "review-1",
+      createdAt: "2026-07-14T00:00:00.000Z",
+      updatedAt: "2026-07-14T00:00:00.000Z",
+      name: "Hoàng Ly",
+      rating: 5,
+      time: "22 Jul",
+      verified: true,
+      content:
+        "Báo cáo chất lượng, sát thị trường, không hô hào quá nhiều. Khuyên dùng cho các nhà đầu tư mới.",
+      avatarFallback: "HL",
+    },
+    {
+      id: 2,
+      documentId: "review-2",
+      createdAt: "2026-07-14T00:00:00.000Z",
+      updatedAt: "2026-07-14T00:00:00.000Z",
+      name: "Hải Long",
+      rating: 5,
+      time: "22 Jul",
+      verified: true,
+      content:
+        "Nhiều sản phẩm rất hay và thực tiễn, đặc biệt là hệ thống bot tự động cảnh báo tín hiệu kỹ thuật.",
+      avatarFallback: "HL",
+    },
+    {
+      id: 3,
+      documentId: "review-3",
+      createdAt: "2026-07-14T00:00:00.000Z",
+      updatedAt: "2026-07-14T00:00:00.000Z",
+      name: "Trương Đạt",
+      rating: 5,
+      time: "08 Sep",
+      verified: true,
+      content:
+        "Báo cáo chiến lược rất tốt, các mốc hỗ trợ và kháng cự cực kỳ chính xác. Đội ngũ phân tích rất có tâm.",
+      avatarFallback: "TĐ",
+    },
+    {
+      id: 4,
+      documentId: "review-4",
+      createdAt: "2026-07-14T00:00:00.000Z",
+      updatedAt: "2026-07-14T00:00:00.000Z",
+      name: "Khách hàng HVS",
+      rating: 5,
+      time: "07 Sep",
+      verified: true,
+      content:
+        "Dịch vụ tận tâm, tư vấn 1-1 chuyên nghiệp, hỗ trợ kịp thời khi thị trường biến động mạnh.",
+      avatarFallback: "KH",
+    },
+  ],
+};
+
+export const mockAppDownloadSection = {
+  id: 6,
+  __component: "sections.app-download-section" as const,
+  title: "Đầu Tư Tinh Gọn - Thịnh Vượng Vững Chắc",
+  description:
+    "Cài đặt ứng dụng HVS Trading trên điện thoại để tham gia giao dịch chứng khoán mọi lúc mọi nơi với ứng dụng giao dịch mạnh mẽ. Mở tài khoản miễn phí của bạn ngay hôm nay!",
+  appLogo: {
+    id: 601,
+    documentId: "media-app-logo",
+    name: "logo.webp",
+    alternativeText: "App Logo",
+    caption: null,
+    width: 226,
+    height: 96,
+    formats: null,
+    hash: "applogo",
+    ext: ".webp",
+    mime: "image/webp",
+    size: 10,
+    url: typeof mockAppLogo === "string" ? mockAppLogo : mockAppLogo.src,
+    previewUrl: null,
+    provider: "local",
+    provider_metadata: null,
+    createdAt: "2026-07-14T00:00:00.000Z",
+    updatedAt: "2026-07-14T00:00:00.000Z",
+    publishedAt: "2026-07-14T00:00:00.000Z",
+  },
+  appMockup: {
+    id: 602,
+    documentId: "media-app-mockup",
+    name: "app_mockup.webp",
+    alternativeText: "App Mockup",
+    caption: null,
+    width: 600,
+    height: 724,
+    formats: null,
+    hash: "appmockup",
+    ext: ".webp",
+    mime: "image/webp",
+    size: 200,
+    url: typeof mockAppMockup === "string" ? mockAppMockup : mockAppMockup.src,
+    previewUrl: null,
+    provider: "local",
+    provider_metadata: null,
+    createdAt: "2026-07-14T00:00:00.000Z",
+    updatedAt: "2026-07-14T00:00:00.000Z",
+    publishedAt: "2026-07-14T00:00:00.000Z",
+  },
+  qrCode: {
+    id: 603,
+    documentId: "media-app-qr",
+    name: "app_qr.webp",
+    alternativeText: "QR Code",
+    caption: null,
+    width: 160,
+    height: 160,
+    formats: null,
+    hash: "appqr",
+    ext: ".webp",
+    mime: "image/webp",
+    size: 50,
+    url: typeof mockAppQr === "string" ? mockAppQr : mockAppQr.src,
+    previewUrl: null,
+    provider: "local",
+    provider_metadata: null,
+    createdAt: "2026-07-14T00:00:00.000Z",
+    updatedAt: "2026-07-14T00:00:00.000Z",
+    publishedAt: "2026-07-14T00:00:00.000Z",
+  },
+  appStoreLink: "#",
+  googlePlayLink: "#",
+};
+
+export const mockHomepage: IStrapiSingleResponse<IHomepage> = {
+  data: {
+    id: 1,
+    documentId: "homepage-doc",
+    createdAt: "2026-07-14T00:00:00.000Z",
+    updatedAt: "2026-07-14T00:00:00.000Z",
+    page_sections: [
+      mockHeroSection,
+      mockPartnersSection,
+      mockProductServiceSection,
+      mockNewsSection,
+      mockReviewsSection,
+      mockAppDownloadSection,
+    ],
+  },
+  meta: {},
+};

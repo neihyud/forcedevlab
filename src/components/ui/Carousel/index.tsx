@@ -32,6 +32,10 @@ type CarouselContextProps = {
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 
+function useCarouselOptional() {
+  return React.useContext(CarouselContext);
+}
+
 function useCarousel() {
   const context = React.useContext(CarouselContext);
 
@@ -249,6 +253,72 @@ function CarouselNext({
   );
 }
 
+function CarouselDots({
+  className,
+  renderDot,
+  api: externalApi,
+  ...props
+}: React.ComponentProps<"div"> & {
+  renderDot?: (isActive: boolean, index: number) => React.ReactNode;
+  api?: CarouselApi;
+}) {
+  const context = useCarouselOptional();
+  const api = externalApi ?? context?.api;
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+    api.on("select", onSelect);
+    api.on("reInit", onSelect);
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
+  }, [api]);
+
+  if (count <= 1) return null;
+
+  return (
+    <div
+      data-slot="carousel-dots"
+      className={cn("flex justify-center items-center gap-2", className)}
+      {...props}
+    >
+      {Array.from({ length: count }).map((_, idx) => {
+        const isActive = current === idx;
+        return (
+          <Button
+            key={idx}
+            type="button"
+            variant="pure"
+            size="pure"
+            onClick={() => api?.scrollTo(idx)}
+            className="flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none"
+            aria-label={`Go to slide ${idx + 1}`}
+          >
+            {renderDot ? (
+              renderDot(isActive, idx)
+            ) : (
+              <div
+                className={cn(
+                  "size-2 rounded-full transition-all duration-300",
+                  isActive ? "bg-primary w-4" : "bg-muted",
+                )}
+              />
+            )}
+          </Button>
+        );
+      })}
+    </div>
+  );
+}
+
 export {
   type CarouselApi,
   Carousel,
@@ -256,4 +326,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDots,
 };

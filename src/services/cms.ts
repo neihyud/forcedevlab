@@ -1,9 +1,25 @@
 import { buildStrapiQuery } from "@/lib/helpers/strapi";
-import { IGlobalSetting, IMenuItem } from "@/types/cms";
+import {
+  IGlobalSetting,
+  IMenuItem,
+  IHomepage,
+  IArticle,
+  IReview,
+} from "@/types/cms";
 import {
   IStrapiSingleResponse,
   IStrapiCollectionResponse,
 } from "@/types/strapi";
+
+import { mockGlobalSetting } from "@/services/mocks/global-setting.mock";
+import { mockMenus } from "@/services/mocks/menus.mock";
+import {
+  mockHomepage,
+  mockReviewsSection,
+} from "@/services/mocks/homepage.mock";
+import { mockNews } from "@/services/mocks/news.mock";
+import { mockSupportData } from "@/services/mocks/support.mock";
+import { mockFaqSection } from "@/services/mocks/faq.mock";
 
 let strapiBaseUrl =
   process.env.NEXT_PUBLIC_STRAPI_API_URL ||
@@ -15,76 +31,6 @@ if (strapiBaseUrl && !/^https?:\/\//i.test(strapiBaseUrl)) {
 }
 
 const cleanBaseUrl = strapiBaseUrl.replace(/\/+$/, "");
-
-const mockGlobalSetting: IStrapiSingleResponse<IGlobalSetting> = {
-  data: {
-    id: 1,
-    documentId: "global-setting-doc",
-    createdAt: "2026-07-14T00:00:00.000Z",
-    updatedAt: "2026-07-14T00:00:00.000Z",
-    siteName: "HVS Video App",
-    siteDescription: "Hệ thống Quản lý Video chuyên nghiệp",
-    email: "contact@hvs.com",
-    hotline: "0123456789",
-    address: "Hà Nội, Việt Nam",
-    googleAnalyticsId: "UA-123456-1",
-    logo: null,
-    favicon: null,
-    socialMedia: [
-      {
-        id: 1,
-        socialNetwork: "Facebook",
-        title: "Facebook",
-        description: "https://facebook.com",
-      },
-      {
-        id: 2,
-        socialNetwork: "Twitter",
-        title: "Twitter",
-        description: "https://twitter.com",
-      },
-    ],
-  },
-  meta: {},
-};
-
-const mockMenus: IStrapiCollectionResponse<IMenuItem> = {
-  data: [
-    {
-      id: 1,
-      documentId: "menu-home",
-      createdAt: "2026-07-14T00:00:00.000Z",
-      updatedAt: "2026-07-14T00:00:00.000Z",
-      title: "Trang chủ",
-      link: "/",
-      order: 1,
-      level: 1,
-      target_site: null,
-      type: "home",
-      slug: "home",
-      title_en: "Home",
-      active: "ACTIVE",
-      child: [],
-    },
-    {
-      id: 2,
-      documentId: "menu-videos",
-      createdAt: "2026-07-14T00:00:00.000Z",
-      updatedAt: "2026-07-14T00:00:00.000Z",
-      title: "Danh sách Video",
-      link: "/videos",
-      order: 2,
-      level: 1,
-      target_site: null,
-      type: "videos",
-      slug: "videos",
-      title_en: "Videos",
-      active: "ACTIVE",
-      child: [],
-    },
-  ],
-  meta: {},
-};
 
 /**
  * Fetch the global site settings (single type).
@@ -164,4 +110,37 @@ export async function fetchMenus(): Promise<
     console.error("Failed to fetch menus, falling back to mock data:", error);
     return mockMenus;
   }
+}
+
+export async function fetchHomepage(): Promise<
+  IStrapiSingleResponse<IHomepage>
+> {
+  return mockHomepage;
+}
+
+export async function fetchNews(): Promise<
+  IStrapiCollectionResponse<IArticle>
+> {
+  return mockNews;
+}
+
+export async function fetchReviews(): Promise<
+  IStrapiCollectionResponse<IReview>
+> {
+  return {
+    data: mockReviewsSection.reviews,
+    meta: {},
+  };
+}
+
+export async function fetchSupportData() {
+  return {
+    data: mockSupportData,
+  };
+}
+
+export async function fetchFaq() {
+  return {
+    data: mockFaqSection,
+  };
 }

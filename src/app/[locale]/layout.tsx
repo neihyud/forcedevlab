@@ -1,10 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Geist_Mono } from "next/font/google";
+import {
+  Poppins,
+  Geist_Mono,
+  Plus_Jakarta_Sans,
+  Roboto,
+} from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import NextTopLoader from "nextjs-toploader";
 import LayoutComponents from "@/components/layouts/LayoutComponents";
-import { fetchGlobalSetting, fetchMenus } from "@/services/cms";
+import { fetchGlobalSetting } from "@/services/cms";
 import { getStrapiMediaUrl } from "@/lib/helpers/strapi";
 import { IGlobalSetting, IMenuItem } from "@/types/cms";
 import { IStrapiBase } from "@/types/strapi";
@@ -17,14 +22,26 @@ export function generateStaticParams() {
 }
 
 const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
+  variable: "--font-poppins-google",
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const roboto = Roboto({
+  variable: "--font-roboto-google",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "700"],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -184,8 +201,8 @@ export default async function RootLayout({
 
   try {
     const [globalSettingRes, menusRes] = await Promise.all([
-      fetchGlobalSetting(),
-      fetchMenus(),
+      Promise.resolve({ data: null as (IGlobalSetting & IStrapiBase) | null }),
+      Promise.resolve({ data: [] as (IMenuItem & IStrapiBase)[] }),
     ]);
     globalSetting = globalSettingRes.data;
     menus = menusRes.data;
@@ -336,7 +353,9 @@ export default async function RootLayout({
         {/* Android Chrome */}
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${poppins.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${roboto.variable} antialiased`}
+      >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="data-theme"
