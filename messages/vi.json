@@ -3,7 +3,9 @@
     "title": "Hệ thống Quản lý Video",
     "home": "Trang chủ",
     "loading": "Đang tải...",
-    "error": "Đã xảy ra lỗi"
+    "error": "Đã xảy ra lỗi",
+    "categoryTitle": "Danh mục",
+    "timeReading": "Phút đọc"
   },
   "Dashboard": {
     "title": "Bảng điều khiển CMS",
@@ -169,5 +171,62 @@
       "label": "Công cụ tính toán",
       "desc": "Tính lãi suất, thuế và phí giao dịch"
     }
+  },
+  "Contact": {
+    "title": "Liên hệ với chúng tôi",
+    "subtitle": "HVS luôn sẵn lòng hỗ trợ bạn trong mọi vấn đề về đầu tư chứng khoán",
+    "phone": "Điện thoại",
+    "email": "Email",
+    "formTitle": "Gửi tin nhắn cho chúng tôi"
+  },
+  "Form": {
+    "fullName": "Họ và tên",
+    "fullNamePlaceholder": "Nhập họ tên",
+    "email": "Email",
+    "emailPlaceholder": "Nhập email",
+    "phone": "Số điện thoại",
+    "phonePlaceholder": "Nhập số điện thoại",
+    "subject": "Tiêu đề",
+    "subjectPlaceholder": "Nhập tiêu đề",
+    "message": "Nội dung",
+    "messagePlaceholder": "Nhập nội dung tin nhắn...",
+    "submit": "Gửi tin nhắn",
+    "loading": "Đang gửi...",
+    "submitSuccess": "Gửi thông tin thành công!",
+    "submitSuccessDesc": "Chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất.",
+    "submitError": "Đã xảy ra lỗi.",
+    "submitErrorDesc": "Vui lòng thử lại sau.",
+    "valNameMin": "Họ và tên phải có ít nhất 2 ký tự",
+    "valEmailInvalid": "Email không hợp lệ",
+    "valPhoneMin": "Số điện thoại phải có ít nhất 8 ký tự",
+    "valPhoneMax": "Số điện thoại không được dài quá 15 ký tự",
+    "valPhoneInvalid": "Số điện thoại chứa ký tự không hợp lệ",
+    "valSubjectMin": "Tiêu đề phải có ít nhất 3 ký tự",
+    "valMessageMin": "Nội dung phải có ít nhất 10 ký tự"
+  },
+  "ReportAnalytic": {
+    "title1": "Đăng ký dịch vụ",
+    "title2": "Báo cáo phân tích",
+    "subtitle1": "Đăng ký nhận báo cáo hàng ngày trực tiếp vào thư của bạn.",
+    "subtitle2": "Đừng bỏ lỡ bất kỳ cơ hội đầu tư nào từ đội ngũ chuyên gia của chúng tôi.",
+    "bullet1": "Báo cáo thị trường buổi sáng: 8:00 AM mỗi ngày giao dịch",
+    "bullet2": "Báo cáo chiến lược: 2 lần/tuần (Thứ 3 & Thứ 5)",
+    "bullet3": "Phân tích cổ phiếu chuyên sâu: Khi có cập nhật mới",
+    "formTitle": "Đăng ký dịch vụ",
+    "featuredTitle": "BÁO CÁO NỔI BẬT",
+    "dailyTitle": "BÁO CÁO NGÀY",
+    "readMore": "Đọc thêm",
+    "viewAll": "Xem tất cả",
+    "badgeFeatured": "Nổi bật",
+    "tabStrategy": "Báo cáo chiến lược",
+    "tabMacro": "Báo cáo vĩ mô",
+    "tabBusiness": "Phân tích doanh nghiệp",
+    "tabCommodity": "Báo cáo thị trường hàng hóa",
+    "tabMarket": "Nhận định thị trường",
+    "tabExpert": "Góc nhìn chuyên gia",
+    "relatedTitle": "Bài viết liên quan",
+    "noRelated": "Không có báo cáo liên quan",
+    "noContent": "Nội dung báo cáo đang được cập nhật...",
+    "viewSource": "Xem tài liệu gốc"
   }
 }

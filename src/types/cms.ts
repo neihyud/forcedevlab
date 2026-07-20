@@ -19,12 +19,52 @@ export interface IGlobalSetting {
   hotline: string;
   address: string;
   googleAnalyticsId: string;
+  workingHours: string;
+  fax: string;
   logo: IStrapiMedia | null;
   favicon: IStrapiMedia | null;
   socialMedia: ISocialMedia[];
   fax?: string;
   workingTime?: string;
   slogan?: string;
+}
+
+// ─── Page SEO (Collection Type) ────────────────────────────────────────────────
+export interface IPageSeo {
+  path: string;
+  title: string;
+  description: string;
+  keywords?: string | null;
+  image?: IStrapiMedia | null;
+  active: "ACTIVE" | "INACTIVE";
+}
+
+// ─── Report Analyst (Collection Type) ──────────────────────────────────────────
+export interface IReportAnalyst {
+  id: number;
+  documentId: string;
+  title: string;
+  slug?: string | null;
+  description?: string | null;
+  description_mini?: string | null;
+  badge?: string | null;
+  public_at: string;
+  Keyword?: string | null;
+  category: ICategory;
+  isFeatured?: boolean;
+  view?: number | null;
+  pin?: boolean | null;
+  ticker?: string | null;
+  reading_time?: string | null;
+  source_link?: string | null;
+  title_seo?: string | null;
+  description_seo?: string | null;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  active: "ACTIVE" | "INACTIVE";
+  image?: IStrapiMedia | null;
 }
 
 // ─── Menu (Collection Type) ────────────────────────────────────────────────────
@@ -155,4 +195,15 @@ export interface ICmsData {
   partners: (IPartner & IStrapiBase)[];
   homepage: (IHomepage & IStrapiBase) | null;
   lastFetched: string | null;
+}
+
+// ─── Category (Collection Type) ────────────────────────────────────────────────
+export interface ICategory {
+  id: number;
+  title: string;
+  type?: string | null;
+  slug?: string | null;
+  description?: string | null;
+  active?: "ACTIVE" | "INACTIVE";
+  order?: number | null;
 }

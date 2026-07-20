@@ -476,15 +476,15 @@ export const ArrowCircleRightIcon = (props: React.ComponentProps<"svg">) => {
 export const SearchIcon = (props: React.ComponentProps<"svg">) => {
   return (
     <svg
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
       {...props}
     >
       <path
-        d="M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+        d="M17.5001 17.5001L13.8835 13.8835M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
@@ -676,6 +676,38 @@ export const FacebookIcon = (props: React.ComponentProps<"svg">) => {
           <rect width="24" height="24" fill="white" />
         </clipPath>
       </defs>
+    </svg>
+  );
+};
+
+export const LinkedinIcon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M16.8694 8.13075C15.9317 7.19303 14.6598 6.66623 13.3336 6.66623C12.0074 6.66623 10.7356 7.19303 9.7978 8.13075C8.86004 9.06848 8.33322 10.3403 8.33322 11.6664V17.5H11.6668V11.6664C11.6668 11.2244 11.8424 10.8005 12.155 10.4879C12.4676 10.1753 12.8916 9.9997 13.3336 9.9997C13.7757 9.9997 14.1996 10.1753 14.5122 10.4879C14.8248 10.8005 15.0004 11.2244 15.0004 11.6664V17.5H18.334V11.6664C18.334 10.3403 17.8072 9.06848 16.8694 8.13075Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M4.99962 7.49959H1.66602V17.5H4.99962V7.49959Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M3.33282 4.99949C4.25336 4.99949 4.99962 4.25327 4.99962 3.33275C4.99962 2.41224 4.25336 1.66602 3.33282 1.66602C2.41227 1.66602 1.66602 2.41224 1.66602 3.33275C1.66602 4.25327 2.41227 4.99949 3.33282 4.99949Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 };
@@ -2086,20 +2118,88 @@ export const TickCircleAroundIcon = (props: React.ComponentProps<"svg">) => {
   );
 };
 
-export const ArrowRightIcon = (props: React.ComponentProps<"svg">) => {
+export const ClockIcon = (props: React.ComponentProps<"svg">) => {
   return (
     <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      width="19"
+      height="19"
+      viewBox="0 0 19 19"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M9.334 4.3336V9.334L12.6676 11.0008M17.668 9.334C17.668 13.9367 13.9367 17.668 9.334 17.668C4.73126 17.668 1 13.9367 1 9.334C1 4.73126 4.73126 1 9.334 1C13.9367 1 17.668 4.73126 17.668 9.334Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const CalendarIcon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="19"
+      viewBox="0 0 17 19"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M5.16667 1V4.3336M11.8333 1V4.3336M1 7.6672H16M2.66667 2.6668H14.3333C15.2538 2.6668 16 3.41305 16 4.3336V16.0012C16 16.9217 15.2538 17.668 14.3333 17.668H2.66667C1.74619 17.668 1 16.9217 1 16.0012V4.3336C1 3.41305 1.74619 2.6668 2.66667 2.6668Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const UploadIcon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+      <g clipPath="url(#clip0_272_11909)">
+        <path
+          d="M9.99998 1.66602V12.5002M6.66698 4.99962L9.99998 1.66602L13.333 4.99962M3.33398 10V16.6672C3.33398 17.1093 3.50956 17.5332 3.82209 17.8458C4.13462 18.1584 4.5585 18.334 5.00048 18.334H14.9995C15.4415 18.334 15.8653 18.1584 16.1779 17.8458C16.4904 17.5332 16.666 17.1093 16.666 16.6672V10"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_272_11909">
+          <rect width="20" height="20" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export const ArrowRightIcon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      {...props}
+    >
       <path
-        d="M7 12H17M17 12L13 8M17 12L13 16"
-        stroke="white"
-        strokeWidth="2"
+        d="M3.33301 8.00021H12.6674M8.00021 12.6674L12.6674 8.00021L8.00021 3.33301"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

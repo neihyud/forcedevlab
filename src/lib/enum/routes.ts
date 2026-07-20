@@ -10,4 +10,5 @@ export enum Routes {
   PRICING = "/pricing",
   ABOUT_US = "/about-us",
   BOOKING = "/booking",
+  REPORT_ANALYTIC = "/bao-cao-phan-tich",
 }

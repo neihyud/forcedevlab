@@ -1,11 +1,12 @@
-import { buildStrapiQuery } from "@/lib/helpers/strapi";
 import {
   IGlobalSetting,
   IMenuItem,
   IHomepage,
   IArticle,
   IReview,
+  IPageSeo,
 } from "@/types/cms";
+import { cmsFetch } from "./client";
 import {
   IStrapiSingleResponse,
   IStrapiCollectionResponse,
@@ -40,24 +41,14 @@ export async function fetchGlobalSetting(): Promise<
   IStrapiSingleResponse<IGlobalSetting>
 > {
   try {
-    const query = buildStrapiQuery({ populate: "*" });
-    const url = `${cleanBaseUrl}/api/global-setting?${query}`;
-
-    const res = await fetch(url, {
-      next: {
+    return await cmsFetch<IStrapiSingleResponse<IGlobalSetting>>(
+      "/api/global-setting",
+      {
+        params: { populate: "*" },
         revalidate: 86400,
         tags: ["cms-global-setting"],
       },
-    });
-
-    if (!res.ok) {
-      console.warn(
-        `CMS Fetch global settings returned status: ${res.status}. Falling back to mock data.`,
-      );
-      return mockGlobalSetting;
-    }
-
-    return await res.json();
+    );
   } catch (error) {
     console.error(
       "Failed to fetch global settings, falling back to mock data:",
@@ -75,37 +66,13 @@ export async function fetchMenus(): Promise<
   IStrapiCollectionResponse<IMenuItem>
 > {
   try {
-    const query = buildStrapiQuery({
-      filters: {
-        parent: {
-          id: {
-            $null: true,
-          },
-        },
-      },
-      populate: {
-        child: {
-          populate: "child",
-        },
-      },
-    });
-    const url = `${cleanBaseUrl}/api/menus?${query}`;
-
-    const res = await fetch(url, {
-      next: {
+    return await cmsFetch<IStrapiCollectionResponse<IMenuItem>>(
+      "/api/header-menu",
+      {
         revalidate: 86400,
         tags: ["cms-menus"],
       },
-    });
-
-    if (!res.ok) {
-      console.warn(
-        `CMS Fetch menus returned status: ${res.status}. Falling back to mock data.`,
-      );
-      return mockMenus;
-    }
-
-    return await res.json();
+    );
   } catch (error) {
     console.error("Failed to fetch menus, falling back to mock data:", error);
     return mockMenus;
@@ -143,4 +110,33 @@ export async function fetchFaq() {
   return {
     data: mockFaqSection,
   };
+}
+/**
+ * Fetch specific Page SEO by path and locale.
+ */
+export async function fetchPageSeo(
+  path: string,
+  locale: string,
+): Promise<IStrapiCollectionResponse<IPageSeo>> {
+  try {
+    return await cmsFetch<IStrapiCollectionResponse<IPageSeo>>(
+      "/api/page-seos",
+      {
+        params: {
+          filters: {
+            path: {
+              $eq: path,
+            },
+          },
+          locale: locale,
+          populate: "image",
+        },
+        revalidate: 86400,
+        tags: [`cms-page-seo-${path}-${locale}`],
+      },
+    );
+  } catch (error) {
+    console.error(`Failed to fetch page SEO for path ${path}:`, error);
+    return { data: [], meta: {} };
+  }
 }

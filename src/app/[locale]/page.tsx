@@ -1,5 +1,9 @@
 import Home from "@/modules/home";
-import { fetchGlobalSetting, fetchMenus, fetchHomepage } from "@/services/cms";
+import {
+  fetchGlobalSetting,
+  fetchHomepage,
+  fetchMenus,
+} from "@/services/cms/global";
 import { IGlobalSetting, IMenuItem, IHomepage } from "@/types/cms";
 import { IStrapiBase } from "@/types/strapi";
 

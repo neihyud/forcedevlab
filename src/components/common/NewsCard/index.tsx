@@ -1,19 +1,30 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { Card, CardContent } from "@/components/ui/Card";
+import { Button } from "@/components/ui";
+import { ArrowRightIcon } from "@/components/icons";
 
 export type NewsCardProps = {
+  /** Hero image src (URL string or next/image StaticImageData) */
   imageSrc: string | StaticImageData;
+  /** Alt text for the image */
   imageAlt?: string;
+  /** Badge label — e.g. "Tin cập nhập" */
   badge?: string;
+  /** Date string — e.g. "16/06/2026" */
   date?: string;
+  /** Card title (uppercase, bold) */
   title: string;
+  /** Short description text */
   description?: string;
+  /** Click handler for the card */
   onClick?: () => void;
+  /** Extra classNames for the root element */
   className?: string;
+
+  tags?: string[];
+  textButton?: string;
 };
 
 /**
@@ -21,74 +32,100 @@ export type NewsCardProps = {
  *
  * Uses base UI `Card` component and Tailwind CSS styling.
  */
-const NewsCard: React.FC<NewsCardProps> = ({
-  imageSrc,
-  imageAlt = "",
-  badge,
-  date,
-  title,
-  description,
-  onClick,
-  className,
-}) => {
-  return (
-    <Card
-      onClick={onClick}
-      borderRadius="16px"
-      padding="0px"
-      gap={0}
-      shadow="none"
-      className={cn(
-        "relative overflow-hidden bg-white border border-slate-100/80 transition-all duration-300 w-full max-w-[389.33px] h-[434px] shadow-[0px_4px_25px_-12px_rgba(0,0,0,0.12)]",
-        onClick && "cursor-pointer hover:-translate-y-1 hover:shadow-lg",
-        className,
-      )}
-    >
-      <div className="relative w-full h-[228px] overflow-hidden rounded-t-[16px] bg-slate-100">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          className="object-cover object-center"
-          sizes="(max-width: 768px) 100vw, 33vw"
-        />
-      </div>
-      <CardContent className="flex flex-col p-4 h-[206px] gap-0">
-        <div className="flex items-center justify-between h-[30px]">
-          {badge ? (
-            <span className="inline-flex items-center justify-center bg-[#ff9c00] rounded-[4px] py-[4px] px-[12px] font-poppins font-medium text-sm text-white whitespace-nowrap leading-[22px] h-[30px]">
-              {badge}
-            </span>
-          ) : (
-            <div className="h-[30px]" />
-          )}
-
-          {date && (
-            <span className="font-poppins font-medium text-sm text-[#667085] leading-[22px]">
-              {date}
-            </span>
-          )}
+const NewsCard = React.memo(
+  ({
+    imageSrc,
+    imageAlt = "",
+    badge,
+    date,
+    title,
+    description,
+    onClick,
+    className,
+    textButton,
+    tags,
+  }: NewsCardProps) => {
+    return (
+      <Card
+        onClick={onClick}
+        borderRadius="16px"
+        className={cn(
+          "relative overflow-hidden bg-white border border-slate-100/80 transition-all duration-300",
+          onClick && "cursor-pointer hover:shadow-md hover:-translate-y-1",
+          className,
+        )}
+      >
+        {/* ── Image area: 228px height, top rounded ─────────────────────── */}
+        <div className="relative w-full h-[228px] overflow-hidden rounded-t-[16px] bg-slate-100">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
         </div>
 
-        {title && (
-          <div className="pt-3 h-[60px]">
-            <h3 className="font-poppins font-bold text-[17px] leading-6 text-black uppercase text-left line-clamp-2 h-[48px]">
-              {title}
-            </h3>
-          </div>
-        )}
+        {/* ── Content area: padding 16 ──────────────────────────── */}
+        <CardContent className="flex flex-col p-4 gap-0">
+          {/* Row: badge + date */}
+          <div className="flex items-center justify-between mb-4">
+            {badge && (
+              <span className="inline-flex items-center bg-secondary rounded-sm py-1 px-3 font-poppins font-medium text-sm text-white whitespace-nowrap">
+                {badge}
+              </span>
+            )}
 
-        {description && (
-          <div className="pt-3 h-[84px]">
-            <p className="font-poppins font-medium text-base leading-6 text-[#404040] text-left line-clamp-3 h-[72px]">
-              {description}
-            </p>
+            {date && (
+              <span className="font-poppins font-medium text-sm text-[#667085]">
+                {date}
+              </span>
+            )}
           </div>
-        )}
-      </CardContent>
-    </Card>
-  );
-};
+
+          {/* Title */}
+          {title && (
+            <div className="mb-3">
+              <h3 className="font-poppins font-bold text-[17px] leading-6 text-black uppercase text-left line-clamp-2">
+                {title}
+              </h3>
+            </div>
+          )}
+
+          {/* Description */}
+          {description && (
+            <div>
+              <p className="font-poppins font-medium text-base leading-6 text-[#404040] text-left line-clamp-3">
+                {description}
+              </p>
+            </div>
+          )}
+
+          {(tags || textButton) && (
+            <div className="flex justify-between items-center  mt-3 ">
+              <div className="flex flex-wrap  gap-2 h-fit ">
+                {tags?.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-0.5 font-medium rounded-sm text-sm bg-[#F2F4F7] text-[#344054]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {textButton && (
+                <Button onClick={onClick} color="secondary" variant={"text"}>
+                  {textButton}
+                  <ArrowRightIcon className="text-secondary" />
+                </Button>
+              )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+    );
+  },
+);
 
 NewsCard.displayName = "NewsCard";
 

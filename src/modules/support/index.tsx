@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Text, Button } from "@/components/ui";
 import {
   Accordion,
@@ -9,7 +9,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/Accordion";
 import { ChevronDown } from "lucide-react";
-import Link from "next/link";
 
 import Breadcrumb from "@/components/ui/Breadcrumb";
 

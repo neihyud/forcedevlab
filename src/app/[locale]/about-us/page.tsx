@@ -1,5 +1,5 @@
 import AboutUsModule from "@/modules/about-us";
-import { fetchReviews, fetchFaq } from "@/services/cms";
+import { fetchReviews, fetchFaq } from "@/services/cms/global";
 
 export default async function AboutUsPage() {
   let reviews: any[] = [];

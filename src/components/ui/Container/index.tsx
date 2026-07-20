@@ -1,11 +1,9 @@
-"use client";
-
 import React from "react";
 
 import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const containerVariants = cva("w-full h-full mx-auto p-4 max-w-full", {
+const containerVariants = cva("w-full h-full mx-auto max-w-full", {
   variants: {
     size: {
       medium: "xl:max-w-[calc(1200px+4rem)]",
