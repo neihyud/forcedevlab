@@ -1,4 +1,4 @@
-import { IStrapiMedia, IStrapiQueryParams } from "../../types/strapi";
+import { IStrapiQueryParams } from "../../types/strapi";
 
 /**
  * Recursively converts a query parameters object into a Strapi-compatible query string

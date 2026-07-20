@@ -1,51 +1,74 @@
-import { useAppRouter } from "@/hooks/useAppRouter";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import React from "react";
+import { cn } from "@/lib/utils";
 
 export type BreadcrumbItem = {
   title: string | React.ReactNode;
   href?: string;
 };
 
-type Props = {
+interface BreadcrumbProps {
   items: BreadcrumbItem[];
-};
+  separator?: React.ReactNode;
+  className?: string;
+  itemClassName?: string;
+  activeClassName?: string;
+  separatorClassName?: string;
+}
 
-const Breadcrumb = ({ items }: Props) => {
-  const router = useAppRouter();
-
-  const handleClick = (href?: string) => {
-    if (href) {
-      router.push(href);
-    }
-  };
-
+export const Breadcrumb: React.FC<BreadcrumbProps> = ({
+  items,
+  separator = "/",
+  className,
+  itemClassName,
+  activeClassName,
+  separatorClassName,
+}) => {
   return (
-    <nav className="pb-2">
-      {items.map((item, index) => (
-        <React.Fragment key={index}>
-          {!!item.href ? (
-            <Link
-              className="text-text-2 hover:bg-[rgba(0, 0, 0, 0.05)] hover:text-text-2 mx-0.5 cursor-pointer rounded-sm text-sm whitespace-pre-line transition-all duration-300 ease-in-out"
-              href={item.href}
-              onClick={() => handleClick(item.href)}
-            >
-              {item.title}
-            </Link>
-          ) : (
-            <span
-              className="text-text-1 mx-0.5 cursor-pointer rounded-sm text-sm whitespace-pre-line transition-all duration-300 ease-in-out"
-              onClick={() => handleClick(item.href)}
-            >
-              {item.title}
-            </span>
-          )}
+    <nav
+      className={cn(
+        "flex items-center flex-wrap gap-2 text-sm font-poppins",
+        className,
+      )}
+    >
+      {items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        return (
+          <React.Fragment key={index}>
+            {item.href && !isLast ? (
+              <Link
+                href={item.href}
+                className={cn(
+                  "hover:text-[#f5a623] transition-colors duration-200 font-medium",
+                  itemClassName,
+                )}
+              >
+                {item.title}
+              </Link>
+            ) : (
+              <span
+                className={cn(
+                  "font-normal",
+                  isLast ? activeClassName : itemClassName,
+                )}
+              >
+                {item.title}
+              </span>
+            )}
 
-          {index < items.length - 1 && (
-            <span className="text-text-2 text-sm">/</span>
-          )}
-        </React.Fragment>
-      ))}
+            {!isLast && (
+              <span
+                className={cn(
+                  "text-gray-400 select-none flex items-center justify-center font-medium",
+                  separatorClassName,
+                )}
+              >
+                {separator}
+              </span>
+            )}
+          </React.Fragment>
+        );
+      })}
     </nav>
   );
 };

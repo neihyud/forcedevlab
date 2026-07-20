@@ -84,7 +84,7 @@
   "type": "module",
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,css,scss}": [
-      "yarn prettier:fix",
+      "pnpm prettier:fix",
       "git add ."
     ]
   }

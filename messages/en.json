@@ -16,6 +16,162 @@
     "cannotLoad": "Cannot load CMS data",
     "cannotLoadDesc": "Global settings configuration not found or error connecting to Strapi CMS."
   },
+  "MegaMenu": {
+    "Dịch vụ": "Services",
+    "Hướng dẫn": "Guides",
+    "Báo cáo phân tích": "Reports",
+    "Kiến thức": "Knowledge",
+    "Hệ sinh thái": "Ecosystem",
+
+    "dich_vu_1": {
+      "label": "Service 1",
+      "desc": "Short description of service 1"
+    },
+    "sub_service_1": {
+      "label": "Sub-service 1",
+      "desc": "Short description of service 1"
+    },
+    "sub_service_2": {
+      "label": "Sub-service 2",
+      "desc": "Short description of service 4"
+    },
+    "dich_vu_2": {
+      "label": "Service 2",
+      "desc": "Short description of service 2"
+    },
+    "sub_service_3": {
+      "label": "Sub-service 3",
+      "desc": "Short description of service 2"
+    },
+    "sub_service_4": {
+      "label": "Sub-service 4",
+      "desc": "Short description of service 3"
+    },
+    "dich_vu_3": {
+      "label": "Service 3",
+      "desc": "Short description of service 3"
+    },
+    "sub_service_5": {
+      "label": "Sub-service 5",
+      "desc": "Short description of service 1"
+    },
+    "sub_service_6": {
+      "label": "Sub-service 6",
+      "desc": "Short description of service 2"
+    },
+    "dich_vu_4": {
+      "label": "Service 4",
+      "desc": "Short description of service 4"
+    },
+    "sub_service_7": {
+      "label": "Sub-service 7",
+      "desc": "Short description of service 3"
+    },
+    "sub_service_8": {
+      "label": "Sub-service 8",
+      "desc": "Short description of service 4"
+    },
+
+    "huong_dan_co_ban": {
+      "label": "Basic Guidelines",
+      "desc": "First steps to enter the stock market"
+    },
+    "mo_tai_khoan": {
+      "label": "Open Online Account",
+      "desc": "Register account quickly in 5 minutes"
+    },
+    "nap_rut": {
+      "label": "Deposit & Withdraw Money",
+      "desc": "Guide for making deposit & withdrawal transactions"
+    },
+    "giao_dich_hvs": {
+      "label": "HVS Trading Platform",
+      "desc": "Guide to use the HVS trading platform"
+    },
+    "dat_lenh": {
+      "label": "Place Trading Orders",
+      "desc": "Order types and how to place orders"
+    },
+    "bang_gia": {
+      "label": "View Price Board",
+      "desc": "Read and analyze online price board"
+    },
+
+    "bao_cao_vi_mo": {
+      "label": "Macro Reports",
+      "desc": "Analyze economic trends and policies"
+    },
+    "nhan_dinh_thi_truong": {
+      "label": "Market Commentary",
+      "desc": "Update daily trading trends"
+    },
+    "bao_cao_chien_luoc": {
+      "label": "Strategy Reports",
+      "desc": "Analyze periodic investment strategies"
+    },
+    "bao_cao_doanh_nghiep": {
+      "label": "Corporate Reports",
+      "desc": "Detailed analysis of stock potentials"
+    },
+    "cap_nhat_doanh_nghiep": {
+      "label": "Company Updates",
+      "desc": "Evaluate latest quarterly business results"
+    },
+    "khuyen_nghi_dau_tu": {
+      "label": "Investment Recommendations",
+      "desc": "Potential stock portfolio"
+    },
+
+    "chung_khoan_co_ban": {
+      "label": "Basic Securities",
+      "desc": "Foundational knowledge for beginners"
+    },
+    "chung_khoan_la_gi": {
+      "label": "What is Stock?",
+      "desc": "Concept and operational principles"
+    },
+    "phan_tich_co_ban": {
+      "label": "Fundamental Analysis",
+      "desc": "How to read corporate financial statements"
+    },
+    "phan_tich_ky_thuat": {
+      "label": "Technical Analysis",
+      "desc": "Using charts to predict price trends"
+    },
+    "cac_mo_hinh_nen": {
+      "label": "Candlestick Patterns",
+      "desc": "Basic reading of candlestick charts"
+    },
+    "chi_bao_ky_thuat": {
+      "label": "Technical Indicators",
+      "desc": "Using MA, RSI, MACD indicators"
+    },
+
+    "nen_tang_giao_dich": {
+      "label": "Trading Platforms",
+      "desc": "Multi-platform trading tools"
+    },
+    "hvs_trading_web": {
+      "label": "HVS Trading Web",
+      "desc": "Online trading on browsers"
+    },
+    "hvs_trading_app": {
+      "label": "HVS Trading App",
+      "desc": "Trading app on iOS & Android"
+    },
+    "tien_ich_dau_tu": {
+      "label": "Investment Utilities",
+      "desc": "Digital investment support tools"
+    },
+    "hvs_robo_advisor": {
+      "label": "HVS Robo Advisor",
+      "desc": "Automated advisory system"
+    },
+    "cong_cu_tinh_toan": {
+      "label": "Calculation Tools",
+      "desc": "Calculate interest, tax, and transaction fees"
+    }
+  },
   "Contact": {
     "title": "Contact Us",
     "subtitle": "HVS is always ready to support you in all matters of stock investment",
@@ -72,5 +228,20 @@
     "noRelated": "No related reports",
     "noContent": "Report content is being updated...",
     "viewSource": "View original document"
+  },
+  "Footer": {
+    "followUs": "Follow us on",
+    "aboutUs": "ABOUT US",
+    "introduce": "Introduction",
+    "newsHvs": "HVS News",
+    "shareholder": "Shareholder Relations",
+    "career": "Career Opportunities",
+    "contact": "Contact",
+    "terms": "Terms & Conditions",
+    "headquarters": "Headquarters",
+    "phone": "Phone",
+    "fax": "Fax",
+    "email": "Email",
+    "workingTime": "Working hours"
   }
 }

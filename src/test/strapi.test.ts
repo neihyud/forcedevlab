@@ -89,16 +89,16 @@ describe("Strapi Helper Utilities", () => {
     });
 
     test("prepends NEXT_PUBLIC_STRAPI_API_URL or NEXT_PUBLIC_BASE_URL to relative url", () => {
-      process.env.NEXT_PUBLIC_STRAPI_API_URL = "https://strapi.example.com";
+      process.env.NEXT_PUBLIC_STRAPI_API_URL = "https://cms-24cu.onrender.com";
       expect(getStrapiMediaUrl("/uploads/image.png")).toBe(
-        "https://strapi.example.com/uploads/image.png",
+        "https://cms-24cu.onrender.com/uploads/image.png",
       );
     });
 
     test("cleans up double slashes between base and path", () => {
-      process.env.NEXT_PUBLIC_STRAPI_API_URL = "https://strapi.example.com/";
+      process.env.NEXT_PUBLIC_STRAPI_API_URL = "https://cms-24cu.onrender.com/";
       expect(getStrapiMediaUrl("//uploads/image.png")).toBe(
-        "https://strapi.example.com/uploads/image.png",
+        "https://cms-24cu.onrender.com/uploads/image.png",
       );
     });
   });
@@ -120,12 +120,12 @@ describe("Strapi Helper Utilities", () => {
     });
 
     test("returns thumbnail url if preferred and available", () => {
-      const url = getStrapiImageUrl(mockMedia, "thumbnail");
+      const url = getStrapiImageUrl(mockMedia, "", "thumbnail");
       expect(url).toBe("https://strapi.example.com/uploads/thumbnail_test.png");
     });
 
     test("falls back to main url if preferred format is unavailable", () => {
-      const url = getStrapiImageUrl(mockMedia, "large");
+      const url = getStrapiImageUrl(mockMedia, "", "large");
       expect(url).toBe("https://strapi.example.com/uploads/test.png");
     });
 

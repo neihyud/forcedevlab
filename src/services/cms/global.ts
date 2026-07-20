@@ -1,81 +1,36 @@
+import {
+  IGlobalSetting,
+  IHomepage,
+  IArticle,
+  IReview,
+  IPageSeo,
+} from "@/types/cms";
 import { cmsFetch } from "./client";
-import { IGlobalSetting, IMenuItem, IPageSeo } from "@/types/cms";
 import {
   IStrapiSingleResponse,
   IStrapiCollectionResponse,
 } from "@/types/strapi";
 
-const mockGlobalSetting: IStrapiSingleResponse<IGlobalSetting> = {
-  data: {
-    id: 1,
-    documentId: "global-setting-doc",
-    createdAt: "2026-07-14T00:00:00.000Z",
-    updatedAt: "2026-07-14T00:00:00.000Z",
-    siteName: "HVS Video App",
-    siteDescription: "Hệ thống Quản lý Video chuyên nghiệp",
-    email: "contact@hvs.com",
-    hotline: "0123456789",
-    address: "Hà Nội, Việt Nam",
-    googleAnalyticsId: "UA-123456-1",
-    workingHours: "08:00 – 17:00 (Thứ 2 – Thứ 6)",
-    fax: "Fax: (+84-24) 36888886",
-    logo: null,
-    favicon: null,
-    socialMedia: [
-      {
-        id: 1,
-        socialNetwork: "Facebook",
-        title: "Facebook",
-        description: "https://facebook.com",
-      },
-      {
-        id: 2,
-        socialNetwork: "Twitter",
-        title: "Twitter",
-        description: "https://twitter.com",
-      },
-    ],
-  },
-  meta: {},
-};
+import { mockGlobalSetting } from "@/services/mocks/global-setting.mock";
+import { mockMenus } from "@/services/mocks/menus.mock";
+import {
+  mockHomepage,
+  mockReviewsSection,
+} from "@/services/mocks/homepage.mock";
+import { mockNews } from "@/services/mocks/news.mock";
+import { mockSupportData } from "@/services/mocks/support.mock";
+import { mockFaqSection } from "@/services/mocks/faq.mock";
 
-const mockMenus: IStrapiCollectionResponse<IMenuItem> = {
-  data: [
-    {
-      id: 1,
-      documentId: "menu-home",
-      createdAt: "2026-07-14T00:00:00.000Z",
-      updatedAt: "2026-07-14T00:00:00.000Z",
-      title: "Trang chủ",
-      link: "/",
-      order: 1,
-      level: 1,
-      target_site: null,
-      type: "home",
-      slug: "home",
-      title_en: "Home",
-      active: "ACTIVE",
-      child: [],
-    },
-    {
-      id: 2,
-      documentId: "menu-videos",
-      createdAt: "2026-07-14T00:00:00.000Z",
-      updatedAt: "2026-07-14T00:00:00.000Z",
-      title: "Danh sách Video",
-      link: "/videos",
-      order: 2,
-      level: 1,
-      target_site: null,
-      type: "videos",
-      slug: "videos",
-      title_en: "Videos",
-      active: "ACTIVE",
-      child: [],
-    },
-  ],
-  meta: {},
-};
+let strapiBaseUrl =
+  process.env.NEXT_PUBLIC_STRAPI_API_URL ||
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  "http://localhost:1337";
+
+if (strapiBaseUrl && !/^https?:\/\//i.test(strapiBaseUrl)) {
+  strapiBaseUrl = `https://${strapiBaseUrl}`;
+}
+
+const cleanBaseUrl = strapiBaseUrl.replace(/\/+$/, "");
 
 /**
  * Fetch the global site settings (single type).
@@ -88,7 +43,9 @@ export async function fetchGlobalSetting(): Promise<
     return await cmsFetch<IStrapiSingleResponse<IGlobalSetting>>(
       "/api/global-setting",
       {
-        params: { populate: "*" },
+        params: {
+          populate: "*",
+        },
         revalidate: 86400,
         tags: ["cms-global-setting"],
       },
@@ -103,26 +60,64 @@ export async function fetchGlobalSetting(): Promise<
 }
 
 /**
- * Fetch the top-level menus with nested children (2 levels deep).
+ * Fetch the top-level menus with nested children (3 levels deep).
  * Only returns menus that have no parent (root-level).
  */
-export async function fetchMenus(): Promise<
-  IStrapiCollectionResponse<IMenuItem>
-> {
+export async function fetchMenus(): Promise<any> {
   try {
-    return await cmsFetch<IStrapiCollectionResponse<IMenuItem>>(
-      "/api/header-menu",
-      {
-        revalidate: 86400,
-        tags: ["cms-menus"],
+    return await cmsFetch<any>("/api/header-menu", {
+      params: {
+        populate: {
+          menu_items: {
+            populate: {
+              children: {
+                populate: "*",
+              },
+            },
+          },
+        },
       },
-    );
+      revalidate: 86400,
+      tags: ["cms-menus"],
+    });
   } catch (error) {
     console.error("Failed to fetch menus, falling back to mock data:", error);
     return mockMenus;
   }
 }
 
+export async function fetchHomepage(): Promise<
+  IStrapiSingleResponse<IHomepage>
+> {
+  return mockHomepage;
+}
+
+export async function fetchNews(): Promise<
+  IStrapiCollectionResponse<IArticle>
+> {
+  return mockNews;
+}
+
+export async function fetchReviews(): Promise<
+  IStrapiCollectionResponse<IReview>
+> {
+  return {
+    data: mockReviewsSection.reviews,
+    meta: {},
+  };
+}
+
+export async function fetchSupportData() {
+  return {
+    data: mockSupportData,
+  };
+}
+
+export async function fetchFaq() {
+  return {
+    data: mockFaqSection,
+  };
+}
 /**
  * Fetch specific Page SEO by path and locale.
  */
