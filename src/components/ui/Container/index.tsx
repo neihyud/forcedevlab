@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const containerVariants = cva("w-full h-full mx-auto max-w-full", {
   variants: {
     size: {
-      medium: "xl:max-w-[calc(1200px+4rem)]",
+      medium: "xl:max-w-[calc(1200px)]",
       large: "xl:max-w-[calc(1366px+4rem)]",
       xl: "xl:max-w-[calc(1536px+4rem)]",
       "2xl": "xl:max-w-[calc(1700px+4rem)]",

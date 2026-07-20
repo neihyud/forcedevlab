@@ -243,5 +243,26 @@
     "fax": "Fax",
     "email": "Email",
     "workingTime": "Thời gian làm việc"
+  },
+  "MarginTrading": {
+    "bannerTitle": "Giao dịch ký quỹ",
+    "bannerDesc": "Hoạt động giao dịch ký quỹ tạo ra những cơ hội tốt, nâng cao hiệu quả đầu tư nhưng cũng tiềm ẩn nhiều rủi ro. Việc tìm hiểu cẩn trọng về giao dịch ký quỹ là điều vô cùng quan trọng để thu về lợi nhuận tốt và tránh các rủi ro.",
+    "btnDetail": "CHI TIẾT DỊCH VỤ",
+    "btnFee": "BIỂU PHÍ DỊCH VỤ",
+    "bannerPlaceholder": "[ Ảnh: Banner Giao dịch ký quỹ ]",
+    "recommendSize": "Kích thước khuyên dùng",
+    "badgeService": "DỊCH VỤ",
+    "whatIsTitle": "Giao dịch ký quỹ là gì?",
+    "whatIsDesc1": "Dịch vụ <bold>HVS</bold> hỗ trợ vốn cho nhà đầu tư dưới hình thức ký quỹ tài sản để giao dịch mua bán chứng khoán nằm trong danh mục quy định của Ủy ban Chứng khoán. Tài sản có thể là tiền mặt hoặc chứng khoán nằm trong danh mục được phép giao dịch của <bold>HVS</bold> tại từng thời điểm.",
+    "whatIsDesc2": "Khi sử dụng dịch vụ, nhà đầu tư ký quỹ một số tiền ban đầu hoặc chứng khoán được cho phép theo tỷ lệ được nêu là yêu cầu ký quỹ ban đầu của chứng khoán cần giao dịch. <bold>HVS</bold> thực hiện cho vay phần còn lại.",
+    "summaryTitle": "Tóm tắt dịch vụ",
+    "summarySubtitle": "Tại sao nhà đầu tư lựa chọn dịch vụ Giao dịch ký quỹ của HVS?",
+    "summaryPlaceholder": "[ Ảnh: Tóm tắt hiệu quả giao dịch ]",
+    "whatIsPlaceholder": "[ Ảnh minh họa: Lãi suất 0% / Định vị dịch vụ ]",
+    "summaryItem1": "Hạn mức cho vay lên tới 60 tỷ đồng",
+    "summaryItem2": "Thời hạn cho vay 90 ngày (có thể gia hạn thêm 90 ngày)",
+    "summaryItem3": "Lãi suất tính từ ngày T + 1 (T là ngày giải ngân)",
+    "summaryItem4": "Áp dụng cho nhà đầu tư có tài khoản chứng khoán tại HVS",
+    "summaryItem5": "Sử dụng vốn linh hoạt giữa các tài khoản, có thể rút ra một phần theo điều kiện của HVS"
   }
 }

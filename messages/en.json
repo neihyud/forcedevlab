@@ -243,5 +243,26 @@
     "fax": "Fax",
     "email": "Email",
     "workingTime": "Working hours"
+  },
+  "MarginTrading": {
+    "bannerTitle": "Margin Trading",
+    "bannerDesc": "Margin trading creates good opportunities, enhancing investment efficiency but also harboring many risks. Careful learning about margin trading is extremely important to obtain good returns and avoid risks.",
+    "btnDetail": "SERVICE DETAIL",
+    "btnFee": "SERVICE FEE LIST",
+    "bannerPlaceholder": "[ Image: Margin Trading Banner ]",
+    "recommendSize": "Recommended size",
+    "badgeService": "SERVICE",
+    "whatIsTitle": "What is margin trading?",
+    "whatIsDesc1": "The <bold>HVS</bold> service supports capital for investors in the form of asset margin to trade securities within the regulations of the State Securities Commission. Assets can be cash or securities within <bold>HVS</bold>'s permitted trading list at any given time.",
+    "whatIsDesc2": "When using the service, investors deposit an initial amount of cash or permitted securities according to the ratio stated as the initial margin requirement of the securities to be traded. <bold>HVS</bold> lends the remaining part.",
+    "summaryTitle": "Service Summary",
+    "summarySubtitle": "Why do investors choose HVS Margin Trading service?",
+    "summaryPlaceholder": "[ Image: Trading performance summary ]",
+    "whatIsPlaceholder": "[ Illustration: 0% Interest Rate / Service Positioning ]",
+    "summaryItem1": "Credit limit up to 60 billion VND",
+    "summaryItem2": "Loan term of 90 days (extendable by an additional 90 days)",
+    "summaryItem3": "Interest calculated from day T + 1 (T is disbursement day)",
+    "summaryItem4": "Applies to investors with a securities account at HVS",
+    "summaryItem5": "Flexible capital use between accounts, partial withdrawal allowed based on HVS conditions"
   }
 }
