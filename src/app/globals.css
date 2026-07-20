@@ -179,6 +179,7 @@
       height: 0;
     }
   }
+  --color-grey-25: #404040;
 }
 :root {
   --radius: 0.625rem;
