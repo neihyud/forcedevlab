@@ -6,20 +6,30 @@ import MarginSummary from "../components/MarginSummary";
 
 // Import images
 import bannerBg from "@/lib/assets/images/webp/margin-trading/banner-section.webp";
-import bannerHero from "@/lib/assets/images/webp/margin-trading/hero-illustration.webp";
-import explanationHero from "@/lib/assets/images/webp/margin-trading/margin-section-1.webp";
-import summaryHero from "@/lib/assets/images/webp/margin-trading/margin-section-2.webp";
+import bannerHero from "@/lib/assets/images/webp/margin-trading/depository-banner.webp";
+import explanationHero from "@/lib/assets/images/webp/margin-trading/depository-section1.webp";
+import summaryHero from "@/lib/assets/images/webp/margin-trading/depository-section2.webp";
 import { Routes } from "@/lib/enum/routes";
 
-export default function MarginTradingModule() {
-  const t = useTranslations("MarginTrading");
+export default function SecuritiesDepositoryModule() {
+  const t = useTranslations("SecuritiesDepository");
 
-  const summaryItems = [
-    t("summaryItem1"),
-    t("summaryItem2"),
-    t("summaryItem3"),
-    t("summaryItem4"),
-    t("summaryItem5"),
+  const summaryGroups = [
+    {
+      title: t("bannerTitle"),
+      items: [t("summaryItem1"), t("summaryItem2"), t("summaryItem3")],
+    },
+    {
+      title: t("summaryTitle2"),
+      items: [
+        t("summary2Item1"),
+        t("summary2Item2"),
+        t("summary2Item3"),
+        t("summary2Item4"),
+        t("summary2Item5"),
+        t("summary2Item6"),
+      ],
+    },
   ];
 
   return (
@@ -29,8 +39,8 @@ export default function MarginTradingModule() {
         description={t("bannerDesc")}
         buttonText1={t("btnDetail")}
         buttonText2={t("btnFee")}
-        buttonLink1={Routes.TUTORIAL_MARGIN_TRADING}
-        buttonLink2={Routes.FEE_MARGIN_TRADING}
+        buttonLink1={Routes.TUTORIAL_SECURITIES_DEPOSITORY}
+        buttonLink2={Routes.FEE_SECURITIES_DEPOSITORY}
         bgImage={bannerBg}
         heroImage={bannerHero}
       />
@@ -42,18 +52,14 @@ export default function MarginTradingModule() {
             <strong className="font-bold dark:text-white">{chunks}</strong>
           ),
         })}
-        desc2={t.rich("whatIsDesc2", {
-          bold: (chunks) => (
-            <strong className="font-bold dark:text-white">{chunks}</strong>
-          ),
-        })}
         image={explanationHero}
       />
       <MarginSummary
         title={t("summaryTitle")}
         subtitle={t("summarySubtitle")}
-        summaryItems={summaryItems}
+        summaryGroups={summaryGroups}
         image={summaryHero}
+        variant="list"
       />
     </div>
   );
