@@ -17,43 +17,52 @@ interface HeaderProps {
   globalSetting?: IGlobalSetting | null;
 }
 
-export const Header = ({ menus, globalSetting }: HeaderProps) => {
+export const Header = ({ menus }: HeaderProps) => {
   const locale = useLocale();
   const isEn = locale === "en";
 
-  // Top Nav Items based on Figma Node 101:18315
-  const topNavItems = [
-    {
-      label: isEn ? "Services" : "Dịch vụ",
-      href: isEn ? "/en/services" : "/dich-vu",
-      hasDropdown: true,
-    },
-    {
-      label: isEn ? "Guides" : "Hướng dẫn",
-      href: isEn ? "/en/guides" : "/huong-dan",
-      hasDropdown: true,
-    },
-    {
-      label: isEn ? "Reports" : "Báo cáo phân tích",
-      href: isEn ? "/en/reports" : "/bao-cao",
-      hasDropdown: true,
-    },
-    {
-      label: isEn ? "Knowledge" : "Kiến thức",
-      href: isEn ? "/en/knowledge" : "/kien-thuc",
-      hasDropdown: true,
-    },
-    {
-      label: isEn ? "Ecosystem" : "Hệ sinh thái",
-      href: isEn ? "/en/ecosystem" : "/he-sinh-thai",
-      hasDropdown: true,
-    },
-    {
-      label: isEn ? "Wealth" : "Ủy thác đầu tư",
-      href: isEn ? "/en/wealth" : "/uy-thac",
-      hasDropdown: false,
-    },
-  ];
+  // Dynamic Top Nav Items from CMS
+  const topNavItems = (() => {
+    if (!menus || menus.length === 0) {
+      return [
+        {
+          label: isEn ? "Services" : "Dịch vụ",
+          href: isEn ? "/en/services" : "/dich-vu",
+          hasDropdown: true,
+        },
+        {
+          label: isEn ? "Guides" : "Hướng dẫn",
+          href: isEn ? "/en/guides" : "/huong-dan",
+          hasDropdown: true,
+        },
+        {
+          label: isEn ? "Reports" : "Báo cáo phân tích",
+          href: isEn ? "/en/reports" : "/bao-cao",
+          hasDropdown: true,
+        },
+        {
+          label: isEn ? "Knowledge" : "Kiến thức",
+          href: isEn ? "/en/knowledge" : "/kien-thuc",
+          hasDropdown: true,
+        },
+        {
+          label: isEn ? "Ecosystem" : "Hệ sinh thái",
+          href: isEn ? "/en/ecosystem" : "/he-sinh-thai",
+          hasDropdown: true,
+        },
+        {
+          label: isEn ? "Wealth" : "Ủy thác đầu tư",
+          href: isEn ? "/en/wealth" : "/uy-thac",
+          hasDropdown: false,
+        },
+      ];
+    }
+    return menus.map((item) => ({
+      label: isEn && item.title_en ? item.title_en : item.title,
+      href: item.link,
+      hasDropdown: item.children && item.children.length > 0,
+    }));
+  })();
 
   // Bottom Nav Items based on Figma Node 101:18316
   const bottomNavItems = [
@@ -109,7 +118,14 @@ export const Header = ({ menus, globalSetting }: HeaderProps) => {
                           <ArrowDownLineIcon className="w-5 h-5 text-[#121212] dark:text-slate-400 opacity-80 transition-transform duration-250 group-hover:rotate-180" />
                         )}
                       </Link>
-                      {item.hasDropdown && <MegaMenu label={item.label} />}
+                      {item.hasDropdown && (
+                        <MegaMenu
+                          label={item.label}
+                          menuData={menus?.find(
+                            (m) => (isEn ? m.title_en : m.title) === item.label,
+                          )}
+                        />
+                      )}
                     </div>
                   ))}
                 </nav>

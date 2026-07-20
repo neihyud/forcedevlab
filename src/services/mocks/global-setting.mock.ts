@@ -15,6 +15,7 @@ export const mockGlobalSetting: IStrapiSingleResponse<IGlobalSetting> = {
       "Tầng 4, Trung tâm Thương mại Dịch vụ Cống Vị, số 2 Liễu Giai, Phường Ngọc Hà, TP Hà Nội.",
     fax: "(+84-24) 36888886",
     workingTime: "08:00 – 17:00 (Thứ 2 – Thứ 6)",
+    workingHours: "08:00 – 17:00 (Thứ 2 – Thứ 6)",
     slogan: "LÀM ÍT HƠN AN TOÀN HƠN LỢI NHUẬN NHIỀU HƠN",
     googleAnalyticsId: "UA-123456-1",
     logo: null,

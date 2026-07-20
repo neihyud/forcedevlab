@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = async ({ globalSetting }) => {
   const fax = globalSetting?.fax || "(+84-24) 36888886";
   const email = globalSetting?.email || "info@hvsvn.com";
   const workingTime =
-    globalSetting?.workingTime || "08:00 – 17:00 (Thứ 2 – Thứ 6)";
+    globalSetting?.workingHours || "08:00 – 17:00 (Thứ 2 – Thứ 6)";
 
   const facebookUrl =
     globalSetting?.socialMedia?.find((s) => s.socialNetwork === "Facebook")

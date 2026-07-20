@@ -9,7 +9,7 @@ import "../globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import NextTopLoader from "nextjs-toploader";
 import LayoutComponents from "@/components/layouts/LayoutComponents";
-import { fetchGlobalSetting } from "@/services/cms/global";
+import { fetchGlobalSetting, fetchMenus } from "@/services/cms/global";
 import { getStrapiMediaUrl } from "@/lib/helpers/strapi";
 import { IGlobalSetting, IMenuItem } from "@/types/cms";
 import { IStrapiBase } from "@/types/strapi";
@@ -201,11 +201,11 @@ export default async function RootLayout({
 
   try {
     const [globalSettingRes, menusRes] = await Promise.all([
-      Promise.resolve({ data: null as (IGlobalSetting & IStrapiBase) | null }),
-      Promise.resolve({ data: [] as (IMenuItem & IStrapiBase)[] }),
+      fetchGlobalSetting(),
+      fetchMenus(),
     ]);
     globalSetting = globalSettingRes.data;
-    menus = menusRes.data;
+    menus = menusRes.data?.menu_items || [];
   } catch (error) {
     console.error("Failed to fetch layout data on server side:", error);
   }

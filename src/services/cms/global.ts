@@ -1,6 +1,5 @@
 import {
   IGlobalSetting,
-  IMenuItem,
   IHomepage,
   IArticle,
   IReview,
@@ -44,7 +43,9 @@ export async function fetchGlobalSetting(): Promise<
     return await cmsFetch<IStrapiSingleResponse<IGlobalSetting>>(
       "/api/global-setting",
       {
-        params: { populate: "*" },
+        params: {
+          populate: "*",
+        },
         revalidate: 86400,
         tags: ["cms-global-setting"],
       },
@@ -59,20 +60,26 @@ export async function fetchGlobalSetting(): Promise<
 }
 
 /**
- * Fetch the top-level menus with nested children (2 levels deep).
+ * Fetch the top-level menus with nested children (3 levels deep).
  * Only returns menus that have no parent (root-level).
  */
-export async function fetchMenus(): Promise<
-  IStrapiCollectionResponse<IMenuItem>
-> {
+export async function fetchMenus(): Promise<any> {
   try {
-    return await cmsFetch<IStrapiCollectionResponse<IMenuItem>>(
-      "/api/header-menu",
-      {
-        revalidate: 86400,
-        tags: ["cms-menus"],
+    return await cmsFetch<any>("/api/header-menu", {
+      params: {
+        populate: {
+          menu_items: {
+            populate: {
+              children: {
+                populate: "*",
+              },
+            },
+          },
+        },
       },
-    );
+      revalidate: 86400,
+      tags: ["cms-menus"],
+    });
   } catch (error) {
     console.error("Failed to fetch menus, falling back to mock data:", error);
     return mockMenus;

@@ -36,7 +36,7 @@ export const CmsHeader = ({ menus, globalSetting }: HeaderProps) => {
         key: item.link,
         label: locale === "en" && item.title_en ? item.title_en : item.title,
         children:
-          item.child
+          item.children
             ?.filter((subItem) => subItem.active === "ACTIVE")
             .map((subItem) => ({
               key: subItem.link,

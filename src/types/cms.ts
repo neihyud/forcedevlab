@@ -81,6 +81,7 @@ export interface IMenuItem {
   title_en: string | null;
   active: TMenuActive;
   child: (IMenuItem & IStrapiBase)[];
+  children?: (IMenuItem & IStrapiBase)[];
 }
 
 // ─── Partner (Collection Type) ──────────────────────────────────────────────────

@@ -20,8 +20,10 @@ export default async function HomePage() {
       fetchHomepage(),
     ]);
     globalSetting = globalSettingRes.data;
-    menus = menusRes.data;
+    menus = menusRes.data?.menu_items || [];
     homepage = homepageRes.data;
+
+    console.log("menus", menus);
   } catch (error) {
     console.error("Failed to fetch home page CMS data:", error);
   }
