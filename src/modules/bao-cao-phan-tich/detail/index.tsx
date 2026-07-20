@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { useTranslations } from "next-intl";
 import { PostDetail } from "@/components/common/PostDetail";
 import { IReportAnalyst, ICategory } from "@/types/cms";

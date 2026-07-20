@@ -20,7 +20,6 @@ export interface IGlobalSetting {
   address: string;
   googleAnalyticsId: string;
   workingHours: string;
-  fax: string;
   logo: IStrapiMedia | null;
   favicon: IStrapiMedia | null;
   socialMedia: ISocialMedia[];
