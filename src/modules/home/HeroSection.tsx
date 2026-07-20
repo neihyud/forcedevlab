@@ -6,8 +6,8 @@ import { ArrowRight } from "lucide-react";
 import { PlayBtnHome } from "@/components/icons";
 import { Button } from "@/components/ui";
 import { HeroBadge } from "@/components/common/HeroBadge";
-import collaboratory from "@/components/images/section-hero/collaboratory.png";
-import analysis from "@/components/images/section-hero/analysis.png";
+import collaboratory from "@/lib/assets/mock-images/home/hero/collaboratory.webp";
+import analysis from "@/lib/assets/mock-images/home/hero/analysis.webp";
 
 import { IHeroSectionComponent, IPartnersSectionComponent } from "@/types/cms";
 

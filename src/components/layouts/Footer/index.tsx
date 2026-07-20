@@ -9,7 +9,7 @@ import logoImg from "@/lib/assets/images/logo.webp";
 import footerMap from "@/lib/assets/mock-images/footer/footer_map.webp";
 import footerCert1 from "@/lib/assets/mock-images/footer/footer_cert1.webp";
 import footerCert2 from "@/lib/assets/mock-images/footer/footer_cert2.webp";
-import footerBg from "@/lib/assets/mock-images/footer/footer_bg.svg";
+import footerBg from "@/lib/assets/mock-images/footer/footer_bg.webp";
 
 interface FooterProps {
   globalSetting?: IGlobalSetting | null;
@@ -43,13 +43,13 @@ export const Footer: React.FC<FooterProps> = async ({ globalSetting }) => {
       ?.description || "#";
 
   return (
-    <footer className="w-full bg-navy-dark text-white pt-[20px] pb-6 relative overflow-hidden select-none">
+    <footer className="w-full text-white pt-[20px] pb-6 relative overflow-hidden select-none">
       {/* Background Image from Figma */}
       <Image
         src={footerBg}
         alt="Footer Background"
         fill
-        className="object-cover -z-10 pointer-events-none"
+        className="object-cover  pointer-events-none"
         priority
       />
       <div className="max-w-[1200px] w-full px-4 md:px-8 relative z-10 mx-auto">

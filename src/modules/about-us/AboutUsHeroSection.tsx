@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import bgAboutHero from "@/components/images/section-hero/bg-about-hero.png";
+import bgAboutHero from "@/lib/assets/mock-images/home/hero/bg-about-hero.webp";
 import aboutUsHeroLogo from "@/lib/assets/mock-images/about-us/about-us-hero-logo.webp";
 import { AboutContainer } from "./AboutContainer";
 import Breadcrumb from "@/components/ui/Breadcrumb";

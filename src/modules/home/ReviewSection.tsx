@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import bgReview from "@/components/images/section-review/bg-review.png";
+import bgReview from "@/lib/assets/mock-images/home/review/bg-review.webp";
 import markDecor from "@/lib/assets/mock-images/home/review/mark.webp";
 import {
   Button,
